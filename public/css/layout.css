@@ -168,7 +168,6 @@ ul#nav {
 	/* center align the menu */
 	text-align: center;
 	background-color: #a8a8a8;
-	opacity: 0.7;
 }
 ul#nav li {
 	position: relative;
@@ -905,7 +904,7 @@ call-to-action .button {
 #contact h1 span {
 	display: none;
 }
-#contact h1:before {
+#contact .email-icon:before {
 	font-family: 'FontAwesome';
 	content: '\f0e0';
 	padding-right: 10px;
