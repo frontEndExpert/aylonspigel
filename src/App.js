@@ -35,8 +35,8 @@ const App = () => {
 			<Routes>
 				<Route path='/' element={<Layout />}>
 					<Route index element={<HomePage />} />
-					<Route path='/first-choice-ai' element={<FirstChoice />} />
-					<Route path='/blog/robots-future' element={<RobotsFuture />} />
+					<Route path='/first-choice-ai/' element={<FirstChoice />} />
+					<Route path='/blog/robots-future/' element={<RobotsFuture />} />
 					{/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
