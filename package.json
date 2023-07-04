@@ -1,8 +1,8 @@
 {
-  "name": "resume_starter_pack",
+  "name": "First Choice AI - Aylon SPigel",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aylonspigel.com/",
+  "homepage": "/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
