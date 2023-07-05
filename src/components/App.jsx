@@ -12,7 +12,7 @@ const App = (props) => {
         description={props.description || "Aylon Spigel & FirstChoiceAI"}
       >
         
-        <Script id="humanbot1"
+        {/* <Script id="humanbot1"
 				type='text/javascript'
 				data-cfasync='false'
 				src='https://humanchatdemo.com/build/js/humanbot_latest.js?v=1.4.12'
@@ -25,7 +25,7 @@ const App = (props) => {
               version: '1.4.12',
             }}
             );
-      </Script>
+      </Script> */}
 			
 				
 </Head>
