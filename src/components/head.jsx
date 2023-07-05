@@ -31,8 +31,6 @@ const Head = (props) => (
     <meta name="theme-color" content="#000000"></meta>
     <link rel='icon' href='/favicon.ico' />
 
-    
-
   </NextHead>
 );
 

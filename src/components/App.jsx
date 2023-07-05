@@ -12,23 +12,18 @@ const App = (props) => {
         description={props.description || "Aylon Spigel & FirstChoiceAI"}
       >
         
-        {/* <Script id="humanbot1"
-				type='text/javascript'
-				data-cfasync='false'
-				src='https://humanchatdemo.com/build/js/humanbot_latest.js?v=1.4.12'
-				crossOrigin='anonymous'
-			>
-         var aiBot = new AiBot(
-            {{
-              embedId: 'RuGpmx82DP5j',
-              remoteBaseUrl: 'https://humanchatdemo.com/',
-              version: '1.4.12',
-            }}
-            );
-      </Script> */}
-			
-				
 </Head>
+<noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+{/* eslint-disable-next-line */}
+  <script id="robot1"
+				data-cfasync='false'
+				src='https://humanchatdemo.com/build/js/humanbot_latest.js?v=1.4.13'
+				crossOrigin='anonymous'
+			></script>
+      {/* eslint-disable-next-line */}
+			<script id='robot2' src='/static/js/robot.js' />
       <Nav />
       {props.children}
     </main>
