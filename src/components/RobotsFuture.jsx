@@ -13,6 +13,8 @@ const RobotsFuture = () => {
 				className='float-right robot3'
 				src={robot3}
 				alt='A robot booking an appointment'
+				width={300}
+				height={450}
 			/>
 			<p>
 				Videobots are the next generation of website interaction. They are
@@ -26,7 +28,8 @@ const RobotsFuture = () => {
 				interacting with it. Videobots can help to keep people on your website
 				longer by providing them with engaging and informative content.
 			</p>
-			<Image src={robot4} className='float-left robot3' alt='A running robot' />
+			<Image src={robot4} className='float-left robot3' alt='A running robot' width={130}
+				height={130} />
 			<p>
 				In addition to improving your bounce rate, videobots can also help you
 				to generate leads and sales. Videobots can be used to collect emails,
@@ -43,6 +46,8 @@ const RobotsFuture = () => {
 				className='float-right robot2'
 				src={robot2}
 				alt='A robot booking an appointment'
+				width={300}
+				height={230}
 			/>
 			<ol>
 				<li>Increased website engagement</li>

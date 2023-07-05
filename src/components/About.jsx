@@ -27,6 +27,8 @@ const About = ({ data }) => {
 						className='profile-pic'
 						src={profilepic}
 						alt="Aylon's Profile Pic"
+						width={120}
+						height={120}
 					/>
 				</div>
 				<div className='nine columns main-col'>
