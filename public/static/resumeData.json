@@ -1,0 +1,153 @@
+{
+  "main": {
+    "name": "Aylon Spigel",
+    "occupation": "Full Stack Developer",
+    "description": "Building the Internet Since 1996.",
+    "image": "aylon.png",
+    "bio": "Hi there! I'm Aylon. After earning my Master's degree in Interface Design, I studied and worked with ASP.NET, and PHP. For the past six years, my focus was all flavors of JavaScript: React, Next.js, Vue, Node.js, and Angular 16. I've architected systems with databases like SQL, MySQL, MongoDB, and PostgreSQL. I've written backend REST APIs to expose databases to the frontend. I've coded the frontend using CSS, SCSS, HTML5, Bootstrap, Tailwind, Material UI, React, Redux, Vue.js, or Angular to achieve pixel-perfect design on the one hand, and build business logic and user experience on the other.I've worked alone or within international teams, using Git to share code and Jira or ClickUp to follow project plans and meet deadlines. I've held daily meetings over Zoom or Meet, and bi-weekly sprints to fix bugs or add new features. I've worked on SaaS applications that are built for thousands of users on a network of Dockers using Kubernetes on clouds like AWS or Azure, or even smaller projects with Google Firebase.I enjoy the challenge of constantly learning and applying new knowledge to real projects to meet client requirements and needs. I always enjoy coding in pairs or receiving code reviews. And of course, when my work is published online and used by millions of users, it fills me with pride.",
+    "bio2": "One of my first major projects was to create a multimedia interactive experience for the Columbus Center of Marine Biology in Baltimore. I used Adobe Authorware, the only compatible software at the time, and a network of SPARC stations. The experience was a museum tour that was monitored by interactive kiosks along the way. Students could use SPARC stations to participate in the tour. These computers, which were popular in the early 1990s, provided information about marine life and tracked students' progress through the museum.",
+    "bio3": "I was also a certified EFT (Emotional Freedom Technique) practitioner and NLP (Neuro-linguistic programming) life coach in Bangkok for 2 years.",
+    "bio4": "Moreover, I enjoyed 7 years of renovating and renting out studio apartments in Bangkok to expats.",
+    "contactmessage": "Get in touch with me and let me build your web site!",
+    "email": "aylon.spigel@gmail.com",
+    "phone": "+972 548941474",
+    "address": {
+      "street": "59 Hagiborim",
+      "city": "Israel",
+      "state": "Israel",
+      "zip": "3838010"
+    },
+    "website": "https://www.aylonspigel.com/",
+    "resumedownload": "http://aylonspigel.com/resumedownload",
+    "social": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/aylon.spigel",
+        "className": "fa fa-facebook"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/aylonspigel",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/frontendexpert",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "My Programming Language Proficiency",
+    "education": [
+      {
+        "school": "Pratt Institute",
+        "degree": "Master's Degree, Computer Graphics",
+        "city": "Brooklyn, NY",
+        "graduated": "July 1996",
+        "description": "Multimedia Design and Interface Design"
+      },
+      {
+        "school": "New York Institute Of Technology",
+        "degree": "Bachelor's Degree, Computer Graphics",
+        "city": "New York City, NY",
+        "graduated": "Jan 1993",
+        "description": "Digital Photography."
+      }
+    ],
+    "work": [
+      {
+        "company": "Reblaze",
+        "title": "Senior Frontend Developer",
+        "years": "July 2022 - Present",
+        "description": "Part of the Frontend development team. Providing development solutions for SaaS Cyber Security Application. Both private and open source code. Main clients: EBay. Technologies: React, Next.js v13, Vue, Redux, Angular 8+, npm, Git, Node.js, express.js, AWS, Firebase, Kubernetes, Docker-compose. I also used databases such as MS SQL, MongoDB, PostgreSQL, MySQL. Employment termination due to company downsizing."
+      },
+      {
+        "company": "Eshet Tours",
+        "title": "Senior Frontend Developer",
+        "years": "Sep 2021 - June 2022",
+        "description": "Worked in the front-end team on new features and maintaining the company website that serves thousands of people. Technologies: React, Next.js, Redux, redux-saga, node.js, JIRA, GitHub, and Docker. Employment termination due to the company outsourcing the whole R&D department."
+      },
+      {
+        "company": "A.S. Tech Intertrade",
+        "title": "Senior Fullstack Developer",
+        "years": "July 2015 - June 2021",
+        "description": "Performed front-end web development for diverse clients. End-to-end Single Page Applications including SEO and backend - deployment. Technologies: Angular, React, Redux, RESTful API, NODE.js, PHP, WordPress, MySql, SQL, MongoDB, PostgreSQL."
+      }
+    ],
+    "skills": [
+      {
+        "name": "ReactJs",
+        "level": "100%"
+      },
+      {
+        "name": "VueJs",
+        "level": "95%"
+      },
+      {
+        "name": "NodeJs",
+        "level": "80%"
+      },
+      {
+        "name": "Angular",
+        "level": "80%"
+      },
+      {
+        "name": "WordPress",
+        "level": "90%"
+      },
+      {
+        "name": "Git",
+        "level": "70%"
+      },
+      {
+        "name": "JavaScript",
+        "level": "99%"
+      },
+      {
+        "name": "Web Development",
+        "level": "95%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "e-Com (React JS)",
+        "category": "",
+        "image": "orataiphathai.png",
+        "url": "https://orataiphathai.work"
+      },
+      {
+        "title": "Open Source of Reblaze (Vue.js V3)",
+        "category": "my contribution.",
+        "image": "reblaze.png",
+        "url": "https://github.com/reblaze/ui/blob/main/src/components/AutocompleteInput.vue"
+      },
+      {
+        "title": "Hotel (WordPress PHP)",
+        "category": "",
+        "image": "omnitower.png",
+        "url": "https://omnitowersyncatesuites.com-bangkok.com/en/"
+      },
+      {
+        "title": "Travel (Next.js, React, Redux)",
+        "category": "",
+        "image": "eshet.png",
+        "url": "https://eshet.com"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "Aylon is absolutely excellent, his depth of knowledge & his mentorship really meant a lot to us... I would definitely recommend",
+        "user": "Paul Tekana"
+      },
+      {
+        "text": "Choosing Aylon to develop our website was a wise decision. He not only created a beautiful and user-friendly website, but he also optimized it for search engines, which has resulted in us ranking on the first page of Google. This has led to a significant increase in traffic to our website and, as a result, an increase in sales.",
+        "user": "Nadea .S"
+      }
+    ]
+  }
+}
