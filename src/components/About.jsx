@@ -38,6 +38,7 @@ const About = ({ data }) => {
 					<p style={{ color: '#dddeef' }}>{bio2}</p>
 					<p style={{ color: '#eeeeee' }}>{bio3}</p>
 					<p style={{ color: '#eeeeee' }}>{bio4}</p>
+					<p style={{ color: '#eeeeee' }}>Please feel free to book an appointment with me or simply send me an email first. </p>
 					<div className='row'>
 						<div className='columns contact-details'>
 							<h2>Contact Details</h2>

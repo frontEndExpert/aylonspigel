@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import About from './About';
-import Resume from './Resume';
-import Contact from './Contact';
-import Testimonials from './Testimonials';
-import Portfolio from './Portfolio';
+import dynamic from 'next/dynamic'
+
+const Header = dynamic(() => import('./Header'), { ssr: true });
+const About = dynamic(() => import('./About'), { ssr: true });
+const Footer = dynamic(() => import('./Footer'), { ssr: true });
+const Testimonials = dynamic(() => import('./Testimonials'), {	ssr: true  });
+const Portfolio = dynamic(() => import('./Portfolio'), {	ssr: true  });
+const Contact = dynamic(() => import('./Contact'), {	ssr: true  });
+const Resume = dynamic(() => import('./Resume'), {	ssr: true  });
+
 
 const HomePage = () => {
 	const [resumeData, setResumeData] = useState({});
@@ -32,3 +35,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
