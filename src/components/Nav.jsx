@@ -12,7 +12,7 @@ const Nav = () => {
 				<a className='mobile-btn' href='#home' title='Hide navigation'>
 					Hide navigation
 				</a> 
-				<ul id='nav' className='nav'>
+	<ul id='nav' className='nav'>
 					<li className='current'>
 						<Link className='smoothscroll' href='/#home'>
 							Home
@@ -21,16 +21,6 @@ const Nav = () => {
 					<li>
 						<Link className='smoothscroll' href='/#about'>
 							About
-						</Link>
-					</li>
-					<li className='smoothscroll'>
-						<Link className='smoothscroll' href='/#resume'>
-							Resume
-						</Link>
-					</li>
-					<li>
-						<Link className='smoothscroll' href='/#portfolio'>
-							Works
 						</Link>
 					</li>
 					<li>
@@ -44,7 +34,7 @@ const Nav = () => {
 						</Link>
 					</li>
 					<li className='smoothscroll'>
-						<Link href={{ pathname: "/first-choice-ai" }} >First Choice AI</Link>
+						<Link href={{ pathname: "/more-clients-today" }} alt="איך להשיג יותר לקוחות לעסק">More-Clients</Link>
 					</li>
 					<li className='smoothscroll'>
 						<Link href={{ pathname: '/blog/robots-future' }}>The Future of Chatbots</Link>

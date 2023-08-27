@@ -1,8 +1,11 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
+import Image from 'next/image';
+//import profilepic from '../assets/profilepic.png';
 
 const Header = ({ data }) => {
 	if (data) {
+		var profilepic = '/static/images/' + data.image;
 		var networks = data.social.map(function (network) {
 			return (
 				<li key={network.name}>
@@ -17,6 +20,15 @@ const Header = ({ data }) => {
 	return (
 		<header id='home'>
 			<div className='row banner'>
+				<div >
+					<Image
+						className='rounded-full mx-auto mb-4'
+						src={profilepic}
+						alt="Aylon's Profile Pic"
+						width={120}
+						height={120}
+					/>
+				</div>
 				<div className='banner-text'>
 					<h1 style={{ fontSize: '48px' }}>
 						Aylon Spigel

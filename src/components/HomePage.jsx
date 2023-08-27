@@ -8,6 +8,7 @@ const Testimonials = dynamic(() => import('./Testimonials'), {	ssr: true  });
 const Portfolio = dynamic(() => import('./Portfolio'), {	ssr: true  });
 const Contact = dynamic(() => import('./Contact'), {	ssr: true  });
 const Resume = dynamic(() => import('./Resume'), {	ssr: true  });
+const Skills = dynamic(() => import('./Skills'), {	ssr: true  });
 
 
 const HomePage = () => {
@@ -27,6 +28,7 @@ const HomePage = () => {
 			<About data={resumeData.main} />
 			<Resume data={resumeData.resume} />
 			<Portfolio data={resumeData.portfolio} />
+			<Skills data={resumeData.resume} />
 			<Testimonials data={resumeData.testimonials} />
 			<Contact data={resumeData.main} />
 			<Footer data={resumeData.main} />

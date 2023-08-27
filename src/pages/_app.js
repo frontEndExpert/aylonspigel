@@ -1,12 +1,12 @@
-import '../styles/globals.css';
-import '../styles/layout.css';
-import '../styles/magnific-popup.css';
-import '../styles/media-queries.css';
+import "../styles/globals.scss"
+import "../styles/layout.scss"
+import "../styles/magnific-popup.scss"
+import "../styles/media-queries.scss"
 
 export default function App({ Component, pageProps }) {
-	return (
-		<>
-			<Component {...pageProps} />
-		</>
-	);
+  return (
+    <>
+      <Component {...pageProps} />
+    </>
+  )
 }

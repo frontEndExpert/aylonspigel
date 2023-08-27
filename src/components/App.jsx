@@ -1,6 +1,6 @@
 import React from "react"
 import Nav from './Nav';
-import Head from "./head"
+import Head from "./head";
 
 const App = (props) => {
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer = ({ data }) => {
 	if (data) {
@@ -18,7 +19,7 @@ const Footer = ({ data }) => {
 			<div className='row'>
 				<div className='twelve columns'>
 					<ul className='social-links'>{networks}</ul>
-
+					<Link className='text-white copyright' href='/privacy' >Privacy Policy</Link>
 					<ul className='copyright'>
 						<li>
 							Made by{' '}

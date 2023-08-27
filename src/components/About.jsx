@@ -30,7 +30,7 @@ const About = ({ data }) => {
 						width={120}
 						height={120}
 					/>
-				</div>
+</div>
 				<div className='nine columns main-col'>
 					<h2>About Me</h2>
 
