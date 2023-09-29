@@ -125,6 +125,12 @@
   "portfolio": {
     "projects": [
       {
+        "title": "ALPHA clinic (AI agent)",
+        "category": "",
+        "image": "alpha.png",
+        "url": "https://www.alphamwclinic.com/treatment-for-erectile-dysfunction-ed"
+      },
+      {
         "title": "e-Com (React JS)",
         "category": "",
         "image": "orataiphathai.png",
