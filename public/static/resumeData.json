@@ -57,16 +57,28 @@
     ],
     "work": [
       {
+        "company": "Turing",
+        "title": "Senior Frontend Developer",
+        "years": "April 2023 - present",
+        "description": "An american company that place me on different projects with other companies in US."
+      },
+      {
         "company": "Reblaze",
         "title": "Senior Frontend Developer",
-        "years": "July 2022 - Present",
+        "years": "July 2022 - March 2023",
         "description": "Part of the Frontend development team. Providing development solutions for SaaS Cyber Security Application. Both private and open source code. Main clients: EBay. Technologies: React, Next.js v13, Vue, Redux, Angular 8+, npm, Git, Node.js, express.js, AWS, Firebase, Kubernetes, Docker-compose. I also used databases such as MS SQL, MongoDB, PostgreSQL, MySQL. Employment termination due to company downsizing."
       },
       {
         "company": "Eshet Tours",
         "title": "Senior Frontend Developer",
-        "years": "Sep 2021 - June 2022",
+        "years": "Oct 2021 - June 2022",
         "description": "Worked in the front-end team on new features and maintaining the company website that serves thousands of people. Technologies: React, Next.js, Redux, redux-saga, node.js, JIRA, GitHub, and Docker. Employment termination due to the company outsourcing the whole R&D department."
+      },
+      {
+        "company": "Microsoft Corporation",
+        "title": "Senior Frontend Developer",
+        "years": "August 2021 - Oct 2021",
+        "description": "Writing tests with testim.io and fixing the accessibility bugs with react."
       },
       {
         "company": "A.S. Tech Intertrade",
@@ -142,7 +154,7 @@
     "testimonials": [
       {
         "text": "Aylon is absolutely excellent, his depth of knowledge & his mentorship really meant a lot to us... I would definitely recommend",
-        "user": "Paul Tekana"
+        "user": "Paul NaRula"
       },
       {
         "text": "Choosing Aylon to develop our website was a wise decision. He not only created a beautiful and user-friendly website, but he also optimized it for search engines, which has resulted in us ranking on the first page of Google. This has led to a significant increase in traffic to our website and, as a result, an increase in sales.",

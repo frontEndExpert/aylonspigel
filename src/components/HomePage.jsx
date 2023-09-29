@@ -28,7 +28,6 @@ const HomePage = () => {
 			<About data={resumeData.main} />
 			<Resume data={resumeData.resume} />
 			<Portfolio data={resumeData.portfolio} />
-			<Skills data={resumeData.resume} />
 			<Testimonials data={resumeData.testimonials} />
 			<Contact data={resumeData.main} />
 			<Footer data={resumeData.main} />

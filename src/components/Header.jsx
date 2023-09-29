@@ -30,17 +30,21 @@ const Header = ({ data }) => {
 					/>
 				</div>
 				<div className='banner-text'>
-					<h1 style={{ fontSize: '48px' }}>
+					<h1 className='text-[42px]' style={{ fontSize: '42px' }}>
 						Aylon Spigel
 						<Typewriter
 							onInit={(typewriter) => {
 								typewriter
 
-									.typeString(`My name is Aylon Spigel.`)
+									.typeString("<span style={{ fontSize: '48px' }}>My name is Aylon Spigel.</span>")
 
 									.pauseFor(1000)
 									.deleteAll()
-									.typeString("I'm A Fullstack Developer")
+									.typeString("<span style={{ fontSize: '48px' }}>I am A Web Application Developer</span>")
+									.pauseFor(1000)
+									.typeString("<span style={{ fontSize: '42px' }}><br>and an Automation Expert \(Zapier or Make\).</span>")
+									.pauseFor(1000)
+									.typeString("<span class='text-red-500' style={{ color: 'red'; 'font-size': '36px' }}><br>Ready to increase your profits with an army of AI Agent Robots.</span>")
 									.start();
 							}}
 						/>
@@ -49,7 +53,7 @@ const Header = ({ data }) => {
 						<Typewriter
 							onInit={(typewriter) => {
 								typewriter
-									.pauseFor(2000)
+									.pauseFor(8000)
 									.typeString(`Based in Israel.`)
 
 									.pauseFor(1000)

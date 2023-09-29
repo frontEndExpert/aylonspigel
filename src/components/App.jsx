@@ -18,7 +18,7 @@ const App = (props) => {
     {/* eslint-disable-next-line */}
       <script id="robot1"
 				data-cfasync='false'
-				src='https://humanchatdemo.com/build/js/humanbot_latest.js?v=1.4.13'
+				src='https://humanchatdemo.com/build/js/hb_latest.js?v=1.5.6'
 				crossOrigin='anonymous'
 			></script>
     {/* eslint-disable-next-line */}
