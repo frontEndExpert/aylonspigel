@@ -34,11 +34,11 @@ const About = ({ data }) => {
 				<div className='nine columns main-col'>
 					<h2>About Me</h2>
 
-					<p style={{ color: '#ddddee' }}>{bio}</p>
-					<p style={{ color: '#dddeef' }}>{bio2}</p>
-					<p style={{ color: '#eeeeee' }}>{bio3}</p>
-					<p style={{ color: '#eeeeee' }}>{bio4}</p>
-					<p style={{ color: '#eeeeee' }}>Please feel free to book an appointment with me or simply send me an email first. </p>
+					<p className="mb-4" style={{ color: '#eeeeee' }}>{bio}</p>
+					<p className="mb-4" style={{ color: '#dddeef' }}>{bio2}</p>
+					<p className="mb-4" style={{ color: '#eeeeee' }}>{bio3}</p>
+					<p className="mb-4" style={{ color: '#eeeeee' }}>{bio4}</p>
+					<p className="mb-6" style={{ color: '#eeeeee' }}>Please feel free to book an appointment with me or simply send me an email first. </p>
 					<div className='row'>
 						<div className='columns contact-details'>
 							<h2>Contact Details</h2>
@@ -46,8 +46,6 @@ const About = ({ data }) => {
 								<span>{name}</span>
 								<br />
 								<span>
-									{street}
-									<br />
 									{city} {state}, {zip}
 								</span>
 								<br />
