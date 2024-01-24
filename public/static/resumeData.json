@@ -153,6 +153,18 @@
         "category": "",
         "image": "eshet.png",
         "url": "https://eshet.com"
+      },
+      {
+        "title": "Garage Door Repair (Wordpress Elementor AI)",
+        "category": "",
+        "image": "gdr.png",
+        "url": "https://gdrneerme.com"
+      },
+      {
+        "title": "Karizmo (Wordpress Elementor)",
+        "category": "",
+        "image": "karizmo.png",
+        "url": "https://karizmo.co.il"
       }
     ]
   },
