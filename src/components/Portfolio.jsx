@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 
 const Portfolio = ({ data }) => {
+  
   if (data) {
     var projects = data.projects.map(function (project) {
       var projectImage = "/static/images/portfolio/" + project.image;

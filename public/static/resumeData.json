@@ -57,10 +57,10 @@
     ],
     "work": [
       {
-        "company": "Turing",
-        "title": "Senior Frontend Developer",
+        "company": "Freelancer",
+        "title": "Frontend/web Developer",
         "years": "April 2023 - present",
-        "description": "An american company that place me on different projects with other companies in US."
+        "description": "web development, chatbots with Landbot and WordPress Elementor."
       },
       {
         "company": "Reblaze",
@@ -84,7 +84,7 @@
         "company": "A.S. Tech Intertrade",
         "title": "Senior Fullstack Developer",
         "years": "July 2015 - June 2021",
-        "description": "Performed front-end web development for diverse clients. End-to-end Single Page Applications including SEO and backend - deployment. Technologies: Angular, React, Redux, RESTful API, NODE.js, PHP, WordPress, MySql, SQL, MongoDB, PostgreSQL."
+        "description": "Managing web production and digital marketing for several clients. End-to-end Single Page Applications, React, Angular and WordPress. SEO, backend, and deployment. Work included Facebook and Google advertising. Clients reach first page of Google and thousands of followers on Facebook business page. Technologies: Angular, React, Redux, RESTful API, NODE.js, PHP, WordPress, MySql, SQL, MongoDB, PostgreSQL."
       }
     ],
     "skills": [

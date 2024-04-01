@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic'
 
 const Header = dynamic(() => import('./Header'), { ssr: true });
-const About = dynamic(() => import('./About'), { ssr: true });
+const Business = dynamic(() => import('./business'), { ssr: true });
 const Footer = dynamic(() => import('./Footer'), { ssr: true });
 const Testimonials = dynamic(() => import('./Testimonials'), {	ssr: true  });
 const Portfolio = dynamic(() => import('./Portfolio'), {	ssr: true  });
@@ -25,8 +25,7 @@ const HomePage = () => {
 	return (
 		<div className='home-page'>
 			<Header data={resumeData.main} />
-			<About data={resumeData.main} />
-			<Resume data={resumeData.resume} />
+			<Business data={resumeData.main} />
 			<Portfolio data={resumeData.portfolio} />
 			<Testimonials data={resumeData.testimonials} />
 			<Contact data={resumeData.main} />

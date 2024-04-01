@@ -46,27 +46,49 @@ const RobotsFuture = () => {
 				marketing goals.
 			</p>
 			</div>
-			<div className="mt-20" >
-			<Image
-				className='float-right robot5'
-				src={robot5}
-				alt='A robot booking an appointment'
-				width={500}
-				height={300}
-			/>
-			<ul className="list-disc m-15">
-				<li>Increased website engagement</li>
-				<li>Improved bounce rate</li>
-				<li>Increased lead generation</li>
-				<li>Increased sales</li>
-				<li>Enhanced customer service</li>
-				<li>Reduced costs</li>
-			</ul>
+			<div className="mt-20 h-[300px]" >
+				<Image
+					className='float-right robot5'
+					src={robot5}
+					alt='A robot booking an appointment'
+					width={500}
+					height={300}
+				/>
+				<ul className="list-disc m-15">
+					<li>Increased website engagement</li>
+					<li>Improved bounce rate</li>
+					<li>Increased lead generation</li>
+					<li>Increased sales</li>
+					<li>Enhanced customer service</li>
+					<li>Reduced costs</li>
+				</ul>
+			</div>
+			<div >
+			<p>
+			<h2 className='font-bold'>Introducing Our Innovative Chatbot Solutions:</h2>
 
+			<br/>Discover the Future with Our Video Chat Bot!
+
+			<br/>Immerse your visitors in a unique interactive experience with our cutting-edge video chat bot. This sophisticated tool not only engages users by making direct eye contact and moving its lips but is also packed with valuable information about your business. It goes beyond conventional chatbots, providing meaningful answers to your visitors inquiries.
+
+			<br/><span className='font-bold'>Key Features:</span>
+		<ol className='list-decimal pl-[50px]'>
+			<li><span className='font-bold'>Personalized Interaction:</span> The video chat bot collects information about your visitors, enabling personalized interactions.</li>
+
+			<li><span className='font-bold'>Appointment Booking:</span> Seamlessly integrate with your calendar, allowing visitors to book appointments 24/7.</li>
+
+			<li><span className='font-bold'>Multilingual Support:</span> Works flawlessly in any language, ensuring a global reach for your business.</li>
+
+			<li><span className='font-bold'>Cost-Efficient:</span> Even with just one new paying customer, the chatbot covers its own cost. Subsequent customers contribute to pure profit for your business.</li>
+
+			</ol>
+			<br/>Embrace the future of customer engagement with our video chat bot. Elevate your online presence and transform visitors into loyal customers!
+			</p>
 			<p>
 				If you&#39;re interested in learning more about how videobots can help your
 				business, then please contact us today.
 			</p>
+
 			<p>
 				We would be happy to answer any questions you have and help you to get
 				started with videobots.

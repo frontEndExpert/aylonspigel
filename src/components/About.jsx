@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Image from 'next/image';
 
 
 const About = ({ data }) => {
+	const [revealText, setRevealText] = useState(false);
+
+	const toggleText = () => {
+        setRevealText(!revealText)
+    }
+
 	if (data) {
 		var name = data.name;
 		var profilepic = '/static/images/' + data.image;
@@ -32,12 +38,14 @@ const About = ({ data }) => {
 					/>
 </div>
 				<div className='nine columns main-col'>
-					<h2>About Me</h2>
-
-					<p className="mb-4" style={{ color: '#eeeeee' }}>{bio}</p>
-					<p className="mb-4" style={{ color: '#dddeef' }}>{bio2}</p>
-					<p className="mb-4" style={{ color: '#eeeeee' }}>{bio3}</p>
-					<p className="mb-4" style={{ color: '#eeeeee' }}>{bio4}</p>
+					<span onClick={toggleText} className='header-text text-long text-white'>About Me <span className='reveal-text' style={{fontSize: '12px', fontWeight:'100', textDecoration: 'none' }}>click to reveal text</span></span>
+					
+					<div className={revealText ? "text-long" : "text-short"} >
+						<p className="mb-4" style={{ color: '#eeeeee' }}>{bio}</p>
+						<p className="mb-4" style={{ color: '#dddeef' }}>{bio2}</p>
+						<p className="mb-4" style={{ color: '#eeeeee' }}>{bio3}</p>
+						<p className="mb-4" style={{ color: '#eeeeee' }}>{bio4}</p>
+					</div>
 					<p className="mb-6" style={{ color: '#eeeeee' }}>Please feel free to book an appointment with me or simply send me an email first. </p>
 					<div className='row'>
 						<div className='columns contact-details'>

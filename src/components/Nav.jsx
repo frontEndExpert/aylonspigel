@@ -34,7 +34,7 @@ const Nav = () => {
 						</Link>
 					</li>
 					<li className='smoothscroll'>
-						<Link href={{ pathname: "/more-clients-today" }} alt="איך להשיג יותר לקוחות לעסק">More-Clients</Link>
+						<Link href={{ pathname: "/more-clients-today" }} alt="איך להשיג יותר לקוחות לעסק" className='font-bold text-[18px]'>שיווק דיגיטלי</Link>
 					</li>
 					<li className='smoothscroll'>
 						<Link href={{ pathname: '/blog/robots-future' }}>The Future of Chatbots</Link>
