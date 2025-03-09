@@ -455,22 +455,25 @@
   /**
   * Where the magic happens
   */
-  @for $num in 1 through --noOfSlides {
-    &__activator:nth-of-type({$num})
-      &:checked ~ .carousel__track
-        transform translateX(-((num - 1) * 100%))
-      &:checked ~ .carousel__slide:nth-of-type({num})
-        transition opacity $slideTransition, transform $slideTransition
-        top::after 0;
-        left: 0;
-        right: 0;
+  @for $num from 1 through 5 {
+    &__activator:nth-of-type(#{$num}) {
+      &:checked ~ .carousel__track {
+        transform: translateX(-(($num - 1) * 100%));
+      }
+      &:checked ~ .carousel__slide:nth-of-type(#{$num}) {
+        transition: opacity var(--slideTransition), transform var(--slideTransition);
         opacity: 1;
-        transform scale(1)
-      &:checked ~ .carousel__controls:nth-of-type({num})
+        transform: scale(1);
+      }
+      &:checked ~ .carousel__controls:nth-of-type(#{$num}) {
         display: block;
         opacity: 1;
-      &:checked ~ .carousel__indicators .carousel__indicator:nth-of-type({num})
+      }
+      &:checked ~ .carousel__indicators .carousel__indicator:nth-of-type(#{$num}) {
         opacity: 1;
+      }
+    }
+  }
 
   /**
     * Control element - right/left arrows
