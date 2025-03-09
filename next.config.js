@@ -6,14 +6,6 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/tiktok34bhZfkTmZkBvcQnkVwwJVKe0bIFd6cw.txt",
-        destination: "/api/tiktok-verification"
-      }
-    ]
   }
 }
 
