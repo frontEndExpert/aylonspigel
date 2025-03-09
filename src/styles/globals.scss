@@ -478,40 +478,45 @@
   /**
     * Control element - right/left arrows
   */
-  &__control
-    height       $carouselControlSize
-    width        $carouselControlSize
-    margin-top   -($carouselControlSize / 2)
-    top          50%
-    position     absolute
-    display      block
-    cursor       pointer
-    border-width 5px 5px 0 0
-    border-style solid
-    border-color #fafafa
-    opacity      .35
-    outline      0
-    z-index      3
+  &__control {
+    height: var(--carouselControlSize);
+    width: var(--carouselControlSize);
+    margin-top: calc(var(--carouselControlSize) / -2);
+    top: 50%;
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    border-width: 5px 5px 0 0;
+    border-style: solid;
+    border-color: #fafafa;
+    opacity: 0.35;
+    outline: 0;
+    z-index: 3;
 
-    &:hover
-      opacity 1
+    &:hover {
+      opacity: 1;
+    }
 
-    &--backward
-      left      10px
-      transform rotate(-135deg)
+    &--backward {
+      left: 10px;
+      transform: rotate(-135deg);
+    }
 
-    &--forward
-      right     10px
-      transform rotate(45deg)
+    &--forward {
+      right: 10px;
+      transform: rotate(45deg);
+    }
+  }
 
   /**
     * Element for holding slide indicators
   */
-  &__indicators
-    position   absolute
-    bottom     20px
-    width      100%
-    text-align center
+  &__indicators {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
 
   /**
     * Indicator for indicating active slide
@@ -609,10 +614,11 @@ h3
 .carousel__indicator
   background-color #fafafa
 
-for num in (1..$noOfSlides)
-  .carousel__slide:nth-of-type({num})
-  .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type({num})
-    // multiply to get better quality pics
-    background-image url('https://unsplash.it/' + (num * 3) + '00?random')
-    background-size cover
-    background-position center
+@for $num from 1 through 5 {
+  .carousel__slide:nth-of-type(#{$num}),
+  .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(#{$num}) {
+    background-image: url('https://unsplash.it/#{$num * 300}?random');
+    background-size: cover;
+    background-position: center;
+  }
+}
