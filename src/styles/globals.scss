@@ -638,7 +638,7 @@ h3 {
   .carousel--thumb
     .carousel__indicators
     .carousel__indicator:nth-of-type(#{$num}) {
-    background-image: url("https://unsplash.it/#{$num * 300}?random");
+    background-image: url("https://unsplash.it/#{$num * 3}?random");
     background-size: cover;
     background-position: center;
   }
