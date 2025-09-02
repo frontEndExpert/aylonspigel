@@ -8,6 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // New warm color palette for 2025 design trends
+        brand: {
+          primary: "#164A41", // Dark Green - Headings, Buttons
+          secondary: "#F1B24A", // Warm Yellow - Accents, Highlights
+          neutral: "#FDF8F5", // Off-White - Backgrounds
+          accent: "#DE354C" // Vibrant Red - CTAs, Important Elements
+        },
         primary: {
           50: "#eff6ff",
           100: "#dbeafe",
