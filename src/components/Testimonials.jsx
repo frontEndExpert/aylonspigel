@@ -18,7 +18,7 @@ const Testimonials = ({ data }) => {
             {/* Content */}
             <div className="flex-1">
               <blockquote className="text-gray-700 leading-relaxed mb-4">
-                <p className="text-lg italic">&quot;{testimonials.text}&quot;</p>
+                <p className="text-lg italic">"{testimonials.text}"</p>
               </blockquote>
               <cite className="text-gray-900 font-semibold flex items-center">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
@@ -43,7 +43,7 @@ const Testimonials = ({ data }) => {
               Client Testimonials
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Hear what my clients have to say about our collaboration and the results we&apos;ve achieved together
+              Hear what my clients have to say about our collaboration and the results we've achieved together
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
           </div>
