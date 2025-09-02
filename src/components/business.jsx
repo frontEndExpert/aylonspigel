@@ -50,7 +50,7 @@ const Business = ({ data }) => {
 								<div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
 								<Image
 									className='profile-pic rounded-full relative ring-4 ring-white/20 shadow-2xl'
-									src={profilepic}
+									src={profilepic || '/static/images/aylon.png'}
 									alt="Aylon's Profile Pic"
 									width={200}
 									height={200}

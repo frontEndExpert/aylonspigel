@@ -34,7 +34,7 @@ const Header = ({ data }) => {
 						<div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
 						<Image
 							className='rounded-full mx-auto relative ring-4 ring-white/20 shadow-2xl'
-							src={profilepic}
+							src={profilepic || '/static/images/aylon.png'}
 							alt="Aylon's Profile Pic"
 							width={140}
 							height={140}

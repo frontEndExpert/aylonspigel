@@ -13,7 +13,7 @@ const Portfolio = ({ data }) => {
               <div className="relative aspect-video overflow-hidden">
                 <Image 
                   alt={project.title} 
-                  src={projectImage} 
+                  src={projectImage || '/static/images/aylon.png'} 
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />

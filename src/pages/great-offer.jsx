@@ -34,7 +34,7 @@ export default function GreatOffer() {
           </div>
           <div className="hidden md:block relative w-full h-[500px]">
             <Image
-              src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+              src="'https://images.unsplash.com/photo-1607746882042-944635dfe10e' || '/static/images/aylon.png'"
               alt="AI marketing illustration"
               fill
               className="rounded-2xl shadow-xl object-cover"

@@ -31,7 +31,7 @@ const About = ({ data }) => {
 				<div className='three columns'>
 					<Image
 						className='profile-pic'
-						src={profilepic}
+						src={profilepic || '/static/images/aylon.png'}
 						alt="Aylon's Profile Pic"
 						width={120}
 						height={120}

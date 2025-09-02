@@ -13,7 +13,7 @@ const RobotsFuture = () => {
 			<div className='my-10' >
 			<Image
 				className='ml-[50px] float-right robot3'
-				src={robot3}
+				src={robot3 || '/static/images/aylon.png'}
 				alt='A robot booking an appointment'
 				width={300}
 				height={450}
@@ -31,7 +31,7 @@ const RobotsFuture = () => {
 			</p>
 			</div>
 			<div className='my-20' >
-			<Image src={robot4} className='float-left robot4' alt='A running robot' width={130}
+			<Image src={robot4 || '/static/images/aylon.png'} className='float-left robot4' alt='A running robot' width={130}
 				height={130} />
 			<p>
 				In addition to improving your bounce rate, videobots can also help you
@@ -49,7 +49,7 @@ const RobotsFuture = () => {
 			<div className="mt-20 h-[300px]" >
 				<Image
 					className='float-right robot5'
-					src={robot5}
+					src={robot5 || '/static/images/aylon.png'}
 					alt='A robot booking an appointment'
 					width={500}
 					height={300}
@@ -97,7 +97,7 @@ const RobotsFuture = () => {
 				<p>You can click the circle on the bottom right to open the chat  with the video Bot </p> 
 				<Image
 					className='arrow '
-					src={arrowRight}
+					src={arrowRight || '/static/images/aylon.png'}
 					alt='point to video bot'
 					width={200}
 					height={30}

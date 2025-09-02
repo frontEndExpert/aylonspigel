@@ -24,7 +24,7 @@ export default function Services() {
                             </ul>
                         </div>
                         <div className='mb-8 package' >
-                            <Image src="/static/images/form1.png" alt="חבילת בסיס" width={220} height={220} className="ml-20 float-right" />
+                            <Image src="'/static/images/form1.png' || '/static/images/aylon.png'" alt="חבילת בסיס" width={220} height={220} className="ml-20 float-right" />
                             <h2 className="m-0 text-[20px]">חבילה סטנדרטית הכוללת את חבית הבסיס ועוד:</h2>
                             <ul className="list-disc mb-9">
                                 <li className=" text-[20px]">
@@ -39,7 +39,7 @@ export default function Services() {
                             </ul>
                         </div>
                         <div className='package' >
-                            <Image src="/static/images/landing3.png" alt="חבילת בסיס" width={340} height={255} className="mr-10 float-left" />
+                            <Image src="'/static/images/landing3.png' || '/static/images/aylon.png'" alt="חבילת בסיס" width={340} height={255} className="mr-10 float-left" />
                             <h2 className="m-0 text-[20px]">חבילת AI VIP הכוללת את חבילת הבסיס והסטנדרטית ובנוסף גם:</h2>
                             <ul className="list-disc mb-9">
                                 <li className="m-0 text-[20px]"> VideoBot וידאו בוט מונפש שמדבר אל הקהל שלך ומושך את תשומת ליבם.</li>
