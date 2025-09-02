@@ -10,7 +10,6 @@ export default function HeadComponent({ title, description }) {
 			
 			{/* Google Fonts moved to _document*/}
 			
-			
 			{/* Meta tags for better SEO */}
 			<meta name="keywords" content="web development, AI automation, chatbots, React, Next.js, frontend developer, Israel" />
 			<meta name="author" content="Aylon Spigel" />
