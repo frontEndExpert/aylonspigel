@@ -49,17 +49,17 @@ const Header = ({ data }) => {
 								<Typewriter
 									onInit={(typewriter) => {
 										typewriter
-											.typeString("<span class='text-blue-300 text-center' style='font-size: 32px; display: block; text-align: center;'>My name is Aylon Spigel.</span>")
+											.typeString("<span class='text-blue-300 text-center' style='font-size: 32px; display: block; text-align: center;'>Stop Wasting Time on Manual Tasks.</span>")
 											.pauseFor(1000)
 											.deleteAll()
-											.typeString("<span class='text-blue-300 text-center' style='font-size: 32px; display: block; text-align: center;'>I am A Web Application Developer</span>")
+											.typeString("<span class='text-blue-300 text-center' style='font-size: 32px; display: block; text-align: center;'>I Build AI Automations That Do The Work For You.</span>")
 											.pauseFor(1000)
-											.typeString("<span class='text-blue-300 text-center' style='font-size: 28px; display: block; text-align: center;'><br>and an AI Automation Expert.</span>")
+											.typeString("<span class='text-blue-300 text-center' style='font-size: 28px; display: block; text-align: center;'><br>Web Developer specializing in custom AI work flows </span>")
 											.pauseFor(1000)
-											.typeString("<span class='text-red-400 text-center' style='font-size: 24px; display: block; text-align: center;'><br>Ready to increase your profits with AI Agents.</span>")
+											.typeString("<span class='text-red-400 text-center' style='font-size: 24px; display: block; text-align: center;'><br>that save businesses 10+ hours a week on repetitive tasks.</span>")
 											.pauseFor(1000)
 											.deleteAll()
-											.typeString("<span class='text-blue-300 text-center' style='font-size: 32px; display: block; text-align: center;'>Building the Internet Since 1996.</span>")
+											.typeString("<span class='text-blue-300 text-center' style='font-size: 32px; display: block; text-align: center;'>Are You Ready to increase your profits with AI?</span>")
 											.start();
 									}}
 								/>

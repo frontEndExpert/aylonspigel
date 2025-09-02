@@ -38,7 +38,7 @@ const Business = ({ data }) => {
 					{/* Section Header */}
 					<div className="text-center mb-16">
 						<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-							What to Expect
+						How I Help Businesses
 						</h2>
 						<div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
 					</div>
@@ -59,58 +59,79 @@ const Business = ({ data }) => {
 						</div>
 
 						{/* Main Content */}
-						<div className="lg:col-span-2">
-							<div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
-								<h3 className="text-2xl font-bold text-gray-900 mb-6">
-									Specializing in Harnessing the Power of AI for Exceptional Web Design, Automation, and Visuals
-								</h3>
-								
-								<div className="space-y-4 text-gray-700 leading-relaxed">
-									<p>
-										At the forefront of AI technology, I bring you unparalleled expertise in crafting compelling web designs, seamless automation, and visually stunning content. My specialization extends to AI conversational design and cutting-edge chatbots, with a particular emphasis on promoting the unique and highly engaging video chat bot—a proven lead magnet for superior results.
-									</p>
-									
-									<p>
-										Understanding that each business is unique, I offer bespoke solutions tailored to your specific needs. For a deeper understanding of your requirements and a customized solution proposal, don&apos;t hesitate to reach out. Let&apos;s elevate your business through the strategic integration of AI tools.
-									</p>
-								</div>
+						<section className="services-section py-16 bg-gray-50">
+    <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">How I Help Businesses</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                I provide specialized solutions to automate workflows, integrate your tools, and solve complex web
+                development challenges, saving you time and money.
+            </p>
+        </div>
 
-								{/* CTA Button */}
-								<div className="mt-8">
-									<a 
-										href="#contact" 
-										className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-									>
-										Book an Appointment
-										<svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-										</svg>
-									</a>
-								</div>
-							</div>
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Service Card 1: AI Lead Qualifier */}
+            <div className="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+                <div className="icon-container mb-6 text-blue-600">
+                    {/* Replace with your preferred icon from Lucide, Heroicons, etc. */}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">AI-Powered Lead Qualifier</h3>
+                <p className="text-gray-600 mb-6">
+                    Turn website leads into sorted, prioritized sales opportunities automatically. Never miss a high-value lead again.
+                </p>
+                <a href="#contact" className="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                    Learn More
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                </a>
+            </div>
 
-							{/* Video Showcase */}
-							<div className="mt-12">
-								<div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100">
-									<h4 className="text-xl font-semibold text-gray-900 mb-4 text-center">Featured AI Work</h4>
-									<div className="flex justify-center">
-										<div className="relative group overflow-hidden rounded-xl">
-											<video 
-												src="/static/images/beach.mp4" 
-												width={500} 
-												height={300} 
-												className="pic transition-transform duration-500 group-hover:scale-105" 
-												autoPlay
-												muted
-												loop
-												playsInline
-											/>
-											<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+            {/* Service Card 2: API Integration */}
+            <div className="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+                <div className="icon-container mb-6 text-green-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                    </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Custom API Integration</h3>
+                <p className="text-gray-600 mb-6">
+                    Connect your tools (like Google Sheets, CRM, Slack) to work together seamlessly, creating a unified and efficient workflow.
+                </p>
+                <a href="#contact" className="text-green-600 font-medium hover:text-green-800 inline-flex items-center">
+                    Learn More
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+
+            {/* Service Card 3: Web Dev & Fixes */}
+            <div className="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+                <div className="icon-container mb-6 text-purple-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Web Development & Fixes</h3>
+                <p className="text-gray-600 mb-6">
+                    From building new pages to debugging complex issues on your existing site. Ensure your web presence is robust and effective.
+                </p>
+                <a href="#contact" className="text-purple-600 font-medium hover:text-purple-800 inline-flex items-center">
+                    Learn More
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 					</div>
 
 					{/* Contact Details */}
