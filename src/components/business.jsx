@@ -16,7 +16,7 @@ const Business = ({ data }) => {
 			<div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
 				{/* Section Header */}
 				<div className="text-center mb-8 sm:mb-12 lg:mb-16">
-					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-primary mb-4 sm:mb-6 leading-tight">
+					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-primary-dark mb-4 sm:mb-6 leading-tight">
 						How I Help Businesses
 					</h2>
 					<p className="text-lg sm:text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed">
@@ -29,23 +29,23 @@ const Business = ({ data }) => {
 				<div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-10 xl:gap-12 max-w-none">
 					{/* Service Card 1: AI Lead Qualifier */}
 					<div className="flex-1 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden">
-						<div className="p-6 sm:p-8">
+						<div className="p-8">
 							<div className="flex items-center justify-center w-16 h-16 bg-brand-secondary/20 rounded-2xl mb-6">
 								<svg className="w-8 h-8 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
-									<path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+									<path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
 								</svg>
 							</div>
-							<h3 className="text-xl sm:text-2xl font-bold text-brand-primary mb-4 leading-tight">
+							<h3 className="text-xl sm:text-2xl font-bold text-brand-primary-dark mb-4 leading-tight">
 								AI-Powered Lead Qualifier
 							</h3>
 							<p className="text-gray-700 mb-6 leading-relaxed">
-								Turn website leads into sorted, prioritized sales opportunities automatically. Never miss a high-value lead again.
+								Never miss a high-value lead again. Automatically prioritize incoming leads so your sales team knows who to contact first.
 							</p>
 							<a 
 								href="#contact" 
 								className="inline-flex items-center text-brand-accent font-semibold hover:text-brand-accent/80 transition-colors duration-200"
 							>
-								Learn More
+								See How It Works
 								<svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
 									<path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
 								</svg>
@@ -55,23 +55,23 @@ const Business = ({ data }) => {
 
 					{/* Service Card 2: API Integration */}
 					<div className="flex-1 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden">
-						<div className="p-6 sm:p-8">
+						<div className="p-8">
 							<div className="flex items-center justify-center w-16 h-16 bg-brand-secondary/20 rounded-2xl mb-6">
 								<svg className="w-8 h-8 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
-									<path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" clipRule="evenodd" />
+									<path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
 								</svg>
 							</div>
-							<h3 className="text-xl sm:text-2xl font-bold text-brand-primary mb-4 leading-tight">
+							<h3 className="text-xl sm:text-2xl font-bold text-brand-primary-dark mb-4 leading-tight">
 								Custom API Integration
 							</h3>
 							<p className="text-gray-700 mb-6 leading-relaxed">
-								Connect your tools (like Google Sheets, CRM, Slack) to work together seamlessly, creating a unified and efficient workflow.
+								Make your tools talk to each other. Connect your CRM, email, and apps to create seamless workflows that eliminate manual data entry.
 							</p>
 							<a 
 								href="#contact" 
 								className="inline-flex items-center text-brand-accent font-semibold hover:text-brand-accent/80 transition-colors duration-200"
 							>
-								Learn More
+								See How It Works
 								<svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
 									<path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
 								</svg>
@@ -81,23 +81,23 @@ const Business = ({ data }) => {
 
 					{/* Service Card 3: Web Dev & Fixes */}
 					<div className="flex-1 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden">
-						<div className="p-6 sm:p-8">
+						<div className="p-8">
 							<div className="flex items-center justify-center w-16 h-16 bg-brand-secondary/20 rounded-2xl mb-6">
 								<svg className="w-8 h-8 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
 									<path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
 								</svg>
 							</div>
-							<h3 className="text-xl sm:text-2xl font-bold text-brand-primary mb-4 leading-tight">
+							<h3 className="text-xl sm:text-2xl font-bold text-brand-primary-dark mb-4 leading-tight">
 								Web Development & Fixes
 							</h3>
 							<p className="text-gray-700 mb-6 leading-relaxed">
-								From building new pages to debugging complex issues on your existing site. Ensure your web presence is robust and effective.
+								A website that works as hard as you do. From building fast, modern sites to debugging complex issues—I ensure your online presence drives growth.
 							</p>
 							<a 
 								href="#contact" 
 								className="inline-flex items-center text-brand-accent font-semibold hover:text-brand-accent/80 transition-colors duration-200"
 							>
-								Learn More
+								See How It Works
 								<svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
 									<path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
 								</svg>

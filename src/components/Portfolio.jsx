@@ -38,11 +38,11 @@ const Portfolio = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-primary mb-4 sm:mb-6 leading-tight">
-            See How I&apos;ve Helped Businesses Like Yours
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-primary-dark mb-4 sm:mb-6 leading-tight">
+            Real Results, Not Just Promises
           </h2>
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed">
-            Don&apos;t just take my word for it. Explore these case studies to see the tangible results I&apos;ve delivered for clients.
+            Here&apos;s how I&apos;ve helped businesses like yours save time and increase revenue.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ const Portfolio = () => {
               <div className="p-6 sm:p-8 space-y-6">
                 {/* Problem Section */}
                 <div className="space-y-3">
-                  <h4 className="text-lg font-semibold text-brand-primary flex items-center gap-2">
+                  <h4 className="text-lg font-semibold text-brand-primary-dark flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-accent" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                     </svg>
@@ -80,7 +80,7 @@ const Portfolio = () => {
                 
                 {/* Solution Section */}
                 <div className="space-y-3">
-                  <h4 className="text-lg font-semibold text-brand-primary flex items-center gap-2">
+                  <h4 className="text-lg font-semibold text-brand-primary-dark flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                     </svg>
@@ -91,7 +91,7 @@ const Portfolio = () => {
                 
                 {/* Tools Section */}
                 <div className="space-y-3">
-                  <h4 className="text-lg font-semibold text-brand-primary flex items-center gap-2">
+                  <h4 className="text-lg font-semibold text-brand-primary-dark flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-secondary" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
                       <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
@@ -112,7 +112,7 @@ const Portfolio = () => {
                 
                 {/* Results Section */}
                 <div className="space-y-3">
-                  <h4 className="text-lg font-semibold text-brand-primary flex items-center gap-2">
+                  <h4 className="text-lg font-semibold text-brand-primary-dark flex items-center gap-2">
                     <svg className="w-5 h-5 text-brand-accent" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
@@ -153,7 +153,7 @@ const Portfolio = () => {
         <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
           <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-lg border border-gray-100 w-full">
             <div className="w-full max-w-6xl mx-auto">
-              <h3 className="text-2xl sm:text-3xl font-bold text-brand-primary mb-4">
+                                <h3 className="text-2xl sm:text-3xl font-bold text-brand-primary-dark mb-4">
                 See It In Action
               </h3>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">

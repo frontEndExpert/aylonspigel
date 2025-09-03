@@ -41,31 +41,32 @@ const Header = ({ data }) => {
 						/>
 					</div>
 					
-					{/* Typewriter Section - Directly under profile picture */}
+					{/* Hero Section - Directly under profile picture */}
 					<div className='w-full flex flex-col items-center justify-center mb-8 -mt-00'>
-						<h1 className='text-[32px] md:text-[42px] font-bold mb-6 text-white leading-tight text-center'>
-							<span className="block mb-[30px]">Aylon Spigel</span>
-							<div className="text-center">
-								<Typewriter
-									onInit={(typewriter) => {
-										typewriter
-											.typeString("<span class='text-blue-300 text-center' style='font-size: 32px; display: block; text-align: center;'>Stop Wasting Time on Manual Tasks.</span>")
-											.pauseFor(1000)
-											.deleteAll()
-											.typeString("<span class='text-blue-300 text-center' style='font-size: 32px; display: block; text-align: center;'>I Build AI Automations That Do The Work For You.</span>")
-											.pauseFor(1000)
-											.typeString("<span class='text-blue-300 text-center' style='font-size: 28px; display: block; text-align: center;'><br>Web Developer specializing in custom AI work flows </span>")
-											.pauseFor(1000)
-											.typeString("<span class='text-red-400 text-center' style='font-size: 24px; display: block; text-align: center;'><br>that save businesses 10+ hours a week on repetitive tasks.</span>")
-											.pauseFor(1000)
-											.deleteAll()
-											.typeString("<span class='text-blue-300 text-center' style='font-size: 32px; display: block; text-align: center;'>Are You Ready to increase your profits with AI?</span>")
-											.start();
-									}}
-								/>
+						<h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight text-center'>
+							<span className="block mb-8 text-brand-secondary">Aylon Spigel</span>
+							<div className="text-center space-y-4">
+								<div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+									Automate Your Workflow, Amplify Your Growth
+								</div>
+								<div className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+									I help businesses save 10+ hours a week by building custom AI automations that handle lead qualification, data sync, and repetitive tasks—so you can focus on what matters.
+								</div>
 							</div>
 						</h1>
 						
+						{/* CTA Button */}
+						<div className="mt-8">
+							<a 
+								href="#services" 
+								className="bg-brand-accent hover:bg-brand-accent/90 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center gap-3"
+							>
+								<span>Book a Free Audit</span>
+								<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+									<path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+								</svg>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -171,12 +171,16 @@
   "testimonials": {
     "testimonials": [
       {
-        "text": "Aylon is absolutely excellent, his depth of knowledge & his mentorship really meant a lot to us... I would definitely recommend",
+        "text": "We were struggling to manage inquiries and bookings efficiently. Aylon built us a  booking system that qualified leads, automated responses, and book appointments. The result? A 40% reduction in administrative time and a 28% increase in confirmed bookings within the first quarter. I cannot recommend him highly enough.",
         "user": "Paul NaRula"
       },
       {
         "text": "Choosing Aylon to develop our website was a wise decision. He not only created a beautiful and user-friendly website, but he also optimized it for search engines, which has resulted in us ranking on the first page of Google. This has led to a significant increase in traffic to our website and, as a result, an increase in sales.",
         "user": "Nadea .S"
+      },
+      {
+        "text": "Aylon's automation services have been a game-changer for our business. The automated systems he implemented have saved us countless hours of manual work and significantly improved our sales process. Our lead generation and customer follow-up are now completely streamlined, resulting in a 40% increase in sales conversions.",
+        "user": "Sarah M."
       }
     ]
   }
