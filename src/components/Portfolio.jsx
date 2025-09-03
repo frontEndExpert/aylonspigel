@@ -34,20 +34,20 @@ const Portfolio = () => {
   ];
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 bg-brand-neutral" id="proof">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section className="py-8 sm:py-12 lg:py-16 bg-brand-neutral w-full" id="proof">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-primary mb-4 sm:mb-6 leading-tight">
             See How I&apos;ve Helped Businesses Like Yours
           </h2>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed">
             Don&apos;t just take my word for it. Explore these case studies to see the tangible results I&apos;ve delivered for clients.
           </p>
         </div>
 
         {/* Case Studies Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 max-w-none">
           {caseStudies.map(study => (
             <div 
               key={study.id} 
@@ -151,8 +151,8 @@ const Portfolio = () => {
 
         {/* Demo Video Placeholder */}
         <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
-          <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-lg border border-gray-100">
-            <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-lg border border-gray-100 w-full">
+            <div className="w-full max-w-6xl mx-auto">
               <h3 className="text-2xl sm:text-3xl font-bold text-brand-primary mb-4">
                 See It In Action
               </h3>
