@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 const Contact = ({ data }) => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
-	const [contactPhone, setContactPhone] = useState('');
-	const [gender, setGender] = useState('');
+	//const [contactPhone, setContactPhone] = useState('');
+	const [primaryNeed, setNeed] = useState('');
+	const [budget, setBudget] = useState('');
 	const [subject, setSubject] = useState('I have a question');
 	const [message, setMessage] = useState('');
 	const [emailSubmited, setEmailSubmited] = useState(false);
@@ -39,8 +40,8 @@ const Contact = ({ data }) => {
 			name?.trim().length > 0 &&
 			email?.trim().length > 0 &&
 			isEmail(email) &&
-			gender &&
-			subject?.trim().length > 0 &&
+			budget &&
+			primaryNeed &&
 			message.trim().length > 0
 		) {
 			setIsSubmitting(true);
@@ -50,9 +51,8 @@ const Contact = ({ data }) => {
 			let body = JSON.stringify({
 				name: name,
 				email: email,
-				phone: contactPhone,
-				gender: gender,
-				subject: subject,
+				primaryNeed: primaryNeed,
+				budget: budget,
 				message: message || 'without a message',
 			});
 
@@ -131,11 +131,11 @@ const Contact = ({ data }) => {
 									<h2 className="text-2xl font-bold text-white mb-6">Send me a message</h2>
 									<form onSubmit={submitForm} className="space-y-6">
 										<div className="grid md:grid-cols-2 gap-6">
-											<div>
+										<div class="grid md:grid-rows-2 gap-6">
 												<label htmlFor='contactName' className="block text-sm font-medium text-cyan-300 mb-2">
 													Name <span className='text-red-400'>*</span>
 												</label>
-												<input
+												<div className='text-center'><input
 													type='text'
 													value={name}
 													id='contactName'
@@ -143,14 +143,14 @@ const Contact = ({ data }) => {
 													onChange={(e) => setName(e.target.value)}
 													className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
 													placeholder="Your full name"
-												/>
+												/></div>
 											</div>
 
-											<div>
+											<div class="grid md:grid-rows-2 gap-6">
 												<label htmlFor='contactEmail' className="block text-sm font-medium text-cyan-300 mb-2">
 													Email <span className='text-red-400'>*</span>
 												</label>
-												<input
+												<div className='text-center'><input
 													type='email'
 													value={email}
 													id='contactEmail'
@@ -159,63 +159,56 @@ const Contact = ({ data }) => {
 													className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
 													placeholder="your.email@example.com"
 												/>
-											</div>
+											</div></div>
 										</div>
 
 										<div className="grid md:grid-cols-2 gap-6">
-											<div>
-												<label htmlFor='contactPhone' className="block text-sm font-medium text-cyan-300 mb-2">
-													Phone
-												</label>
-												<input
-													type='tel'
-													value={contactPhone}
-													id='contactPhone'
-													name='contactPhone'
-													onChange={(e) => setContactPhone(e.target.value)}
-													className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
-													placeholder="Your phone number"
-												/>
-											</div>
+									<div class="grid md:grid-rows-2 gap-6">
+										<label htmlFor='primaryNeed' className="block text-sm font-medium text-cyan-300 mb-2">
+										I mostly need help with? <span className='text-red-400'>*</span>
+										</label>
+										<div className='text-center'><select
+											value={primaryNeed}
+											id='primaryNeed'
+											name='primaryNeed'
+											onChange={(e) => setNeed(e.target.value)}
+											className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
+											required
+										>
+											<option value="other" selected>Something Else</option>
+											<option value="automation">Automation & Workflows</option>
+											<option value="api-integration">API Integration</option>
+											<option value="web-development">Web Development & Fixes</option>
+											<option value="video">Promotional Video</option>
+											<option value="ai-video-robot">AI Video</option>
+											
+										</select></div>
+									</div>
+									<div class="grid md:grid-rows-2 gap-6">
+    <label for="budget">Expected budget? <span className='text-red-400'>*</span></label>
+    <div className='text-center'><select 
+        id="budget" 
+        name="budget" 
+		onChange={(e) => setBudget(e.target.value)}
+		className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
+        required
+    >
+        <option value="under-1000" selected>Under $1,000</option>
+        <option value="1000-5000">$1,000 - $5,000</option>
+        <option value="5000-plus">$5,000+</option>
+        <option value="need-quote">I need a quote first</option>
+    </select></div>
+</div>
 
-											<div>
-												<label htmlFor='contactGender' className="block text-sm font-medium text-cyan-300 mb-2">
-													Gender <span className='text-red-400'>*</span>
-												</label>
-												<select
-													value={gender}
-													id='contactGender'
-													name='contactGender'
-													onChange={(e) => setGender(e.target.value)}
-													className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
-												>
-													<option value="">Select gender</option>
-													<option value="male">Male</option>
-													<option value="female">Female</option>
-												</select>
-											</div>
 										</div>
 
-										<div>
-											<label htmlFor='contactSubject' className="block text-sm font-medium text-cyan-300 mb-2">
-												Subject <span className='text-red-400'>*</span>
-											</label>
-											<input
-												type='text'
-												value={subject}
-												id='contactSubject'
-												name='contactSubject'
-												onChange={(e) => setSubject(e.target.value)}
-												className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
-												placeholder="What&apos;s this about?"
-											/>
-										</div>
+									
 
-										<div>
+										<div class="grid md:grid-rows-2 gap-6">
 											<label htmlFor='contactMessage' className="block text-sm font-medium text-cyan-300 mb-2">
 												Message <span className='text-red-400'>*</span>
 											</label>
-											<textarea
+											<div className='text-center'><textarea
 												value={message}
 												onChange={(e) => setMessage(e.target.value)}
 												id='contactMessage'
@@ -223,7 +216,7 @@ const Contact = ({ data }) => {
 												rows={6}
 												className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200 resize-none"
 												placeholder="Tell me about your project..."
-											></textarea>
+											></textarea></div>
 										</div>
 
 										<button 
