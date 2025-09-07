@@ -46,7 +46,8 @@ const Contact = ({ data }) => {
 		) {
 			setIsSubmitting(true);
 			
-			let url = 'https://business4u.app.n8n.cloud/webhook-test/form-submission';
+			// let url = 'https://business4u.app.n8n.cloud/webhook-test/form-submission'; // test url
+			let url = 'https://business4u.app.n8n.cloud/webhook/form-submission'; // production url
 
 			let body = JSON.stringify({
 				name: name,
@@ -185,20 +186,20 @@ const Contact = ({ data }) => {
 										</select></div>
 									</div>
 									<div class="grid md:grid-rows-2 gap-6">
-    <label for="budget">Expected budget? <span className='text-red-400'>*</span></label>
-    <div className='text-center'><select 
-        id="budget" 
-        name="budget" 
-		onChange={(e) => setBudget(e.target.value)}
-		className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
-        required
-    >
-        <option value="under-1000" selected>Under $1,000</option>
-        <option value="1000-5000">$1,000 - $5,000</option>
-        <option value="5000-plus">$5,000+</option>
-        <option value="need-quote">I need a quote first</option>
-    </select></div>
-</div>
+										<label for="budget">Expected budget? <span className='text-red-400'>*</span></label>
+										<div className='text-center'><select 
+											id="budget" 
+											name="budget" 
+											onChange={(e) => setBudget(e.target.value)}
+											className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
+											required
+										>
+											<option value="under-1000" selected>Under $1,000</option>
+											<option value="1000-5000">$1,000 - $5,000</option>
+											<option value="5000-plus">$5,000+</option>
+											<option value="need-quote">I need a quote first</option>
+										</select></div>
+									</div>
 
 										</div>
 
