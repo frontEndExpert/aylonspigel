@@ -46,7 +46,7 @@ const Contact = ({ data }) => {
 		) {
 			setIsSubmitting(true);
 			
-			// let url = 'https://business4u.app.n8n.cloud/webhook-test/form-submission'; // test url
+			//let url = 'https://business4u.app.n8n.cloud/webhook-test/form-submission'; // test url
 			let url = 'https://business4u.app.n8n.cloud/webhook/form-submission'; // production url
 
 			let body = JSON.stringify({
@@ -65,6 +65,7 @@ const Contact = ({ data }) => {
 					headers: {
 						'Content-Type': 'application/json',
 					},
+					mode: 'cors',
 				});
 				
 				console.log('Response status:', response.status);

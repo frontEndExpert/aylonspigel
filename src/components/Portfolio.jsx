@@ -154,25 +154,16 @@ const Portfolio = () => {
           <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-lg border border-gray-100 w-full">
             <div className="w-full max-w-6xl mx-auto">
                                 <h3 className="text-2xl sm:text-3xl font-bold text-brand-primary-dark mb-4">
-                See It In Action
+                                Automation Process In Action
               </h3>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Watch how I transform business processes with automation. This short demo shows the before and after of a typical workflow automation.
+              Watch how this automation captures lead information from your forms, seamlessly adds it to a database or Google Sheet, and then sends it to Perplexity AI for instant analysis and evaluation. The system enriches each lead with an AI-powered score, updating your database in real time. Your sales team can then prioritize the hottest, most urgent leads first—boosting efficiency, conversions, and overall performance.
               </p>
               
               {/* Placeholder for Loom video - replace with actual embed code */}
               <div className="bg-gray-100 rounded-xl p-8 border-2 border-dashed border-gray-300">
-                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                </svg>
-                <p className="text-gray-600 mb-4">
-                  {/* TODO: Replace this placeholder with your Loom video embed code */}
-                  <strong>Demo Video Coming Soon!</strong><br />
-                  Insert your Loom video embed code here to show automation in action.<br/>
-                  Example: 
-                </p>
                 <p className="text-sm text-gray-500">
-                  <iframe src="https://www.loom.com/embed/your-video-id" width="100%" height="400"></iframe>
+                  <iframe src="https://www.loom.com/embed/aeea9b00b837461097f1926d3c5e598a?sid=3370867a-5f35-4cd0-9c89-1279555a3e88" width="100%" height="400"></iframe>
                 </p>
               </div>
             </div>
