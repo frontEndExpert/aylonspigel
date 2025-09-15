@@ -1,7 +1,5 @@
 import React from 'react';
-import Typewriter from 'typewriter-effect';
 import Image from 'next/image';
-//import profilepic from '../assets/profilepic.png';
 
 const Header = ({ data }) => {
 	if (data) {
@@ -18,7 +16,7 @@ const Header = ({ data }) => {
 	}
 
 	return (
-		<header id='home' className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 relative overflow-hidden">
+		<header id='home' className="min-h-screen bg-gradient-to-br from-gray-800 via-blue-900 to-gray-800 flex items-center justify-center pt-16 relative">
 			{/* Background Pattern */}
 			<div className="absolute inset-0 opacity-10">
 				<div className="absolute inset-0" style={{
@@ -27,58 +25,66 @@ const Header = ({ data }) => {
 				}}></div>
 			</div>
 			
-			<div className='w-full max-w-6xl mx-auto px-6 text-center relative z-10'>
-				<div className='flex flex-col items-center justify-center'>
-					{/* Profile Image */}
-					<div className="relative group mb-[300px]">
-						<div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-						<Image
-							className='rounded-full mx-auto relative ring-4 ring-white/20 shadow-2xl'
-							src={profilepic || '/static/images/aylon.png'}
-							alt="Aylon's Profile Pic"
-							width={140}
-							height={140}
-						/>
-					</div>
+			{/* Main Content Container */}
+			<div className="max-w-4xl mx-auto px-4 text-center flex flex-col items-center justify-center">
 					
-					{/* Hero Section - Directly under profile picture */}
-					<div className='w-full flex flex-col items-center justify-center mb-8 -mt-00'>
-						<h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight text-center'>
-							<span className="block mb-8 text-brand-secondary">Aylon Spigel</span>
-							<div className="text-center space-y-4">
-								<div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-									Automate Your Workflow, Amplify Your Growth
-								</div>
-								<div className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-									I help businesses save 10+ hours a week by building custom AI automations that handle lead qualification, data sync, and repetitive tasks—so you can focus on what matters.
-								</div>
-							</div>
-						</h1>
-						
-						{/* CTA Button */}
-						<div className="mt-8">
-							<a 
-								href="#services" 
-								className="bg-brand-accent hover:bg-brand-accent/90 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center gap-3"
-							>
-								<span>Book a Free Audit</span>
-								<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-									<path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-								</svg>
-							</a>
+					{/* Profile Image */}
+					<div className="mb-8">
+						<div className="relative inline-block">
+							<div className="absolute inset-[-0.5rem] bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-25"></div>
+							<Image
+								className="rounded-full relative border-4 border-white/20 shadow-2xl"
+								src={profilepic || '/static/images/aylon.png'}
+								alt="Aylon's Profile Pic"
+								width={120}
+								height={120}
+							/>
 						</div>
 					</div>
-				</div>
-			</div>
+					
+					
+					<div className="mb-8">
+{/* Name */}
+						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-secondary leading-tight">
+							Aylon Spigel
+						</h1>
+{/* Headline */}		<br/>
+						<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+							Automate Your Workflow, Amplify Your Growth
+						</h2>
+					</div>
+					
+					{/* Description */}
+					<div className="mb-8">
+						<p className="text-lg sm:text-xl text-gray-300 font-bold max-w-3xl mx-auto leading-relaxed">
+							I help businesses save 10+ hours a week by building custom AI automations that handle lead qualification, data sync, and repetitive tasks—so you can focus on what matters.
+						</p>
+					</div>
 
-			{/* Social Links - Positioned at bottom */}
-			<div className='absolute bottom-24 left-1/2 transform -translate-x-1/2'>
-				<ul className='social flex justify-center items-center space-x-6 text-2xl text-white/80'>{networks}</ul>
+					{/* CTA Button */}
+					<div className="mb-8">
+						<a 
+							href="#services" 
+							className="bg-brand-accent hover:bg-brand-accent/90 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center gap-3"
+						>
+							<span>Book a Free Audit</span>
+							<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+								<path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+							</svg>
+						</a>
+					</div>
+
+					{/* Social Links */}
+					<div className="mb-8">
+						<ul className="flex justify-center items-center gap-6 text-2xl text-white/80">
+							{networks}
+						</ul>
+					</div>
 			</div>
 
 			{/* Scroll Down Indicator */}
-			<div className='absolute bottom-8 left-1/2 transform -translate-x-1/2'>
-				<a className='smoothscroll text-white/60 hover:text-white transition-colors duration-300' href='#about'>
+			<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+				<a className="text-white/60 hover:text-white transition-colors duration-300" href='#about'>
 					<div className="animate-bounce">
 						<i className='icon-up-circle text-3xl'></i>
 					</div>

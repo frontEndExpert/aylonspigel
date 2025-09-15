@@ -105,7 +105,7 @@ const Contact = ({ data }) => {
 						</p>
 					</div>
 
-					<div className="grid lg:grid-cols-3 gap-12">
+					<div className="grid lg:grid-cols-3 gap-12 items-stretch">
 						{/* Contact Form */}
 						<div className="lg:col-span-2">
 							{emailSubmited ? (
@@ -131,101 +131,101 @@ const Contact = ({ data }) => {
 							) : (
 								<div className="bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900 rounded-2xl p-8 shadow-xl border border-slate-700">
 									<h2 className="text-2xl font-bold text-white mb-6">Send me a message</h2>
-									<form onSubmit={submitForm} className="space-y-6">
-										<div className="grid md:grid-cols-2 gap-6">
-										<div class="grid md:grid-rows-2 gap-6">
-												<label htmlFor='contactName' className="block text-sm font-medium text-cyan-300 mb-2">
+									<form onSubmit={submitForm} className="space-y-4">
+										<div className="grid md:grid-cols-2 gap-4">
+											<div>
+												<label htmlFor='contactName' className="block text-sm font-medium text-cyan-300 mb-1">
 													Name <span className='text-red-400'>*</span>
 												</label>
-												<div className='text-center'><input
+												<input
 													type='text'
 													value={name}
 													id='contactName'
 													name='contactName'
 													onChange={(e) => setName(e.target.value)}
-													className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
+													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
 													placeholder="Your full name"
-												/></div>
+												/>
 											</div>
 
-											<div class="grid md:grid-rows-2 gap-6">
-												<label htmlFor='contactEmail' className="block text-sm font-medium text-cyan-300 mb-2">
+											<div>
+												<label htmlFor='contactEmail' className="block text-sm font-medium text-cyan-300 mb-1">
 													Email <span className='text-red-400'>*</span>
 												</label>
-												<div className='text-center'><input
+												<input
 													type='email'
 													value={email}
 													id='contactEmail'
 													name='contactEmail'
 													onChange={(e) => setEmail(e.target.value)}
-													className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
+													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
 													placeholder="your.email@example.com"
 												/>
-											</div></div>
+											</div>
 										</div>
 
-										<div className="grid md:grid-cols-2 gap-6">
-									<div class="grid md:grid-rows-2 gap-6">
-										<label htmlFor='primaryNeed' className="block text-sm font-medium text-cyan-300 mb-2">
-										I mostly need help with? <span className='text-red-400'>*</span>
-										</label>
-										<div className='text-center'><select
-											value={primaryNeed}
-											id='primaryNeed'
-											name='primaryNeed'
-											onChange={(e) => setNeed(e.target.value)}
-											className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
-											required
-										>
-											<option value="other" selected>Something Else</option>
-											<option value="automation">Automation & Workflows</option>
-											<option value="api-integration">API Integration</option>
-											<option value="web-development">Web Development & Fixes</option>
-											<option value="video">Promotional Video</option>
-											<option value="ai-video-robot">AI Video</option>
-											
-										</select></div>
-									</div>
-									<div class="grid md:grid-rows-2 gap-6">
-										<label for="budget">Expected budget? <span className='text-red-400'>*</span></label>
-										<div className='text-center'><select 
-											id="budget" 
-											name="budget" 
-											onChange={(e) => setBudget(e.target.value)}
-											className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
-											required
-										>
-											<option value="under-1000" selected>Under $1,000</option>
-											<option value="1000-5000">$1,000 - $5,000</option>
-											<option value="5000-plus">$5,000+</option>
-											<option value="need-quote">I need a quote first</option>
-										</select></div>
-									</div>
-
+										<div className="grid md:grid-cols-2 gap-4">
+											<div>
+												<label htmlFor='primaryNeed' className="block text-sm font-medium text-cyan-300 mb-1">
+													I mostly need help with? <span className='text-red-400'>*</span>
+												</label>
+												<select
+													value={primaryNeed}
+													id='primaryNeed'
+													name='primaryNeed'
+													onChange={(e) => setNeed(e.target.value)}
+													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
+													required
+												>
+													<option value="other" selected>Something Else</option>
+													<option value="automation">Automation & Workflows</option>
+													<option value="api-integration">API Integration</option>
+													<option value="web-development">Web Development & Fixes</option>
+													<option value="video">Promotional Video</option>
+													<option value="ai-video-robot">AI Video</option>
+												</select>
+											</div>
+											<div>
+												<label htmlFor="budget" className="block text-sm font-medium text-cyan-300 mb-1">
+													Expected budget? <span className='text-red-400'>*</span>
+												</label>
+												<select 
+													id="budget" 
+													name="budget" 
+													onChange={(e) => setBudget(e.target.value)}
+													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
+													required
+												>
+													<option value="under-1000" selected>Under $1,000</option>
+													<option value="1000-5000">$1,000 - $5,000</option>
+													<option value="5000-plus">$5,000+</option>
+													<option value="need-quote">I need a quote first</option>
+												</select>
+											</div>
 										</div>
 
 									
 
-										<div class="grid md:grid-rows-2 gap-6">
-											<label htmlFor='contactMessage' className="block text-sm font-medium text-cyan-300 mb-2">
+										<div>
+											<label htmlFor='contactMessage' className="block text-sm font-medium text-cyan-300 mb-1">
 												Message <span className='text-red-400'>*</span>
 											</label>
-											<div className='text-center'><textarea
+											<textarea
 												value={message}
 												onChange={(e) => setMessage(e.target.value)}
 												id='contactMessage'
 												name='contactMessage'
-												rows={6}
-												className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200 resize-none"
+												rows={4}
+												className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200 resize-none"
 												placeholder="Tell me about your project..."
-											></textarea></div>
+											></textarea>
 										</div>
 
 										<button 
 											onClick={submitForm} 
 											type='submit' 
 											disabled={isSubmitting}
-											className={`w-full px-8 py-4 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg border ${
+											className={`w-full px-6 py-3 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg border ${
 												isSubmitting 
 													? 'bg-gray-500 text-gray-300 cursor-not-allowed' 
 													: 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 border-cyan-400/30'
@@ -239,11 +239,11 @@ const Contact = ({ data }) => {
 						</div>
 
 						{/* Contact Information */}
-						<aside className="lg:col-span-1">
-							<div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-white">
+						<aside className="lg:col-span-1 flex">
+							<div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-white flex flex-col w-full">
 								<h3 className="text-2xl font-bold mb-6">Contact Information</h3>
 								
-								<div className="space-y-6">
+								<div className="space-y-6 flex-grow">
 									<div className="flex items-start space-x-4">
 										<div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
 											<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -294,7 +294,7 @@ const Contact = ({ data }) => {
 								</div>
 
 								{/* Quick Response Promise */}
-								<div className="mt-8 p-4 bg-white/10 rounded-lg border border-white/20">
+								<div className="mt-auto p-4 bg-white/10 rounded-lg border border-white/20">
 									<div className="flex items-center space-x-3">
 										<svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
