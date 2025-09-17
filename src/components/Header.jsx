@@ -28,22 +28,20 @@ const Header = ({ data }) => {
 			{/* Main Content Container */}
 			<div className="max-w-4xl mx-auto px-4 text-center flex flex-col items-center justify-center">
 					
-					{/* Profile Image */}
-					<div className="mb-8">
-						<div className="relative inline-block">
-							<div className="absolute inset-[-0.5rem] bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-25"></div>
+					
+					
+					
+					<div className="mb-6">
+                    {/* Profile Image */}
+						<div className="flex justify-center mb-4">
 							<Image
-								className="rounded-full relative border-4 border-white/20 shadow-2xl"
-								src={profilepic || '/static/images/aylon.png'}
-								alt="Aylon's Profile Pic"
-								width={120}
-								height={120}
-							/>
+									className="rounded-full relative border-4 border-white/20 shadow-2xl"
+									src={profilepic || '/static/images/aylon.png'}
+									alt="Aylon's Profile Pic"
+									width={120}
+									height={120}
+								/>
 						</div>
-					</div>
-					
-					
-					<div className="mb-8">
 {/* Name */}
 						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-secondary leading-tight">
 							Aylon Spigel
@@ -52,14 +50,16 @@ const Header = ({ data }) => {
 						<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
 							Automate Your Workflow, Amplify Your Growth
 						</h2>
-					</div>
-					
-					{/* Description */}
-					<div className="mb-8">
-						<p className="text-lg sm:text-xl text-gray-300 font-bold max-w-3xl mx-auto leading-relaxed">
+						<br/>
+{/* Description */}
+                    <div className="mb-6">
+						<p className="text-xl sm:text-xl text-gray-300 font-bold max-w-3xl mx-auto ">
 							I help businesses save 10+ hours a week by building custom AI automations that handle lead qualification, data sync, and repetitive tasks—so you can focus on what matters.
 						</p>
 					</div>
+					</div>
+					
+					
 
 					{/* CTA Button */}
 					<div className="mb-8">
