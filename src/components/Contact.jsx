@@ -12,13 +12,13 @@ const Contact = ({ data }) => {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	if (data) {
-		var contactName = data.name;
-		var street = data.address.street;
-		var city = data.address.city;
-		var state = data.address.state;
-		var zip = data.address.zip;
-		var phone = data.phone;
-		var contactEmail = data.email;
+		var contactName = data.main?.name;
+		var street = data.main?.address?.street;
+		var city = data.main?.address?.city;
+		var state = data.main?.address?.state;
+		var zip = data.main?.address?.zip;
+		var phone = data.main?.phone;
+		var contactEmail = data.main?.email;
 	}
 
 	function isEmail(email) {
@@ -68,8 +68,6 @@ const Contact = ({ data }) => {
 					mode: 'cors',
 				});
 				
-				console.log('Response status:', response.status);
-				console.log('Response headers:', response.headers);
 				
 				if (response.ok) {
 					setEmailSubmited(true);
@@ -98,10 +96,8 @@ const Contact = ({ data }) => {
 					<div className="text-center mb-16 -mt-16 flex flex-col items-center justify-center">
 						
 						<p className="text-xl text-gray-300 max-w-2xl mx-auto">
-							Ready to start your project? <br/>
-							The following form is for any questions you may have about my services.<br/>
-							Moreover, it is being processed by an AI Automation that will send you a quick response.
-							You can order a similar AI Automation for your business.<br/>
+							{data?.contact?.ready} <br/>
+							{data?.contact?.message} <br/>
 						</p>
 					</div>
 
@@ -116,26 +112,26 @@ const Contact = ({ data }) => {
 										</svg>
 									</div>
 									<h3 className="text-2xl font-bold text-gray-900 mb-4">
-										Thank you for your message!
+										{data?.contact?.thankYou}
 									</h3>
 									<p className="text-gray-600 mb-6">
-										I will contact you soon to answer your question.
+										{data?.contact?.contactYou}
 									</p>
 									<button
 										onClick={() => setEmailSubmited(false)}
 										className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
 									>
-										Send Another Message
+										{data?.contact?.sendAnother}
 									</button>
 								</div>
 							) : (
 								<div className="bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900 rounded-2xl p-8 shadow-xl border border-slate-700">
-									<h2 className="text-2xl font-bold text-white mb-6">Send me a message</h2>
+									<h2 className="text-2xl font-bold text-white mb-6">{data?.contact?.sendMessage}</h2>
 									<form onSubmit={submitForm} className="space-y-4">
 										<div className="grid md:grid-cols-2 gap-4">
 											<div>
 												<label htmlFor='contactName' className="block text-sm font-medium text-cyan-300 mb-1">
-													Name <span className='text-red-400'>*</span>
+													{data?.contact?.name} <span className='text-red-400'>*</span>
 												</label>
 												<input
 													type='text'
@@ -150,7 +146,7 @@ const Contact = ({ data }) => {
 
 											<div>
 												<label htmlFor='contactEmail' className="block text-sm font-medium text-cyan-300 mb-1">
-													Email <span className='text-red-400'>*</span>
+													{data?.contact?.email} <span className='text-red-400'>*</span>
 												</label>
 												<input
 													type='email'
@@ -167,7 +163,7 @@ const Contact = ({ data }) => {
 										<div className="grid md:grid-cols-2 gap-4">
 											<div>
 												<label htmlFor='primaryNeed' className="block text-sm font-medium text-cyan-300 mb-1">
-													I mostly need help with? <span className='text-red-400'>*</span>
+													{data?.contact?.primaryNeed} <span className='text-red-400'>*</span>
 												</label>
 												<select
 													value={primaryNeed}
@@ -177,17 +173,21 @@ const Contact = ({ data }) => {
 													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
 													required
 												>
-													<option value="other" selected>Something Else</option>
-													<option value="automation">Automation & Workflows</option>
-													<option value="api-integration">API Integration</option>
-													<option value="web-development">Web Development & Fixes</option>
-													<option value="video">Promotional Video</option>
-													<option value="ai-video-robot">AI Video</option>
+													{Object.entries(data?.contact?.primaryNeedOptions || {
+														"other": "Something Else",
+														"automation": "Automation & Workflows",
+														"api-integration": "API Integration",
+														"web-development": "Web Development & Fixes",
+														"video": "Promotional Video",
+														"ai-video-robot": "AI Video"
+													}).map(([value, label]) => (
+														<option key={value} value={value}>{label}</option>
+													))}
 												</select>
 											</div>
 											<div>
 												<label htmlFor="budget" className="block text-sm font-medium text-cyan-300 mb-1">
-													Expected budget? <span className='text-red-400'>*</span>
+													{data?.contact?.budget} <span className='text-red-400'>*</span>
 												</label>
 												<select 
 													id="budget" 
@@ -196,10 +196,14 @@ const Contact = ({ data }) => {
 													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
 													required
 												>
-													<option value="under-1000" selected>Under $1,000</option>
-													<option value="1000-5000">$1,000 - $5,000</option>
-													<option value="5000-plus">$5,000+</option>
-													<option value="need-quote">I need a quote first</option>
+													{Object.entries(data?.contact?.budgetOptions || {
+														"under-1000": "Under $1,000",
+														"1000-5000": "$1,000 - $5,000",
+														"5000-plus": "$5,000+",
+														"need-quote": "I need a quote first"
+													}).map(([value, label]) => (
+														<option key={value} value={value}>{label}</option>
+													))}
 												</select>
 											</div>
 										</div>
@@ -208,7 +212,7 @@ const Contact = ({ data }) => {
 
 										<div>
 											<label htmlFor='contactMessage' className="block text-sm font-medium text-cyan-300 mb-1">
-												Message <span className='text-red-400'>*</span>
+												{data?.contact?.messageText} <span className='text-red-400'>*</span>
 											</label>
 											<textarea
 												value={message}
@@ -231,7 +235,7 @@ const Contact = ({ data }) => {
 													: 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 border-cyan-400/30'
 											}`}
 										>
-											{isSubmitting ? 'Sending...' : 'Send Message'}
+							{isSubmitting ? data?.contact?.sending : data?.contact?.send }
 										</button>
 									</form>
 								</div>
@@ -241,7 +245,7 @@ const Contact = ({ data }) => {
 						{/* Contact Information */}
 						<aside className="lg:col-span-1 flex">
 							<div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-white flex flex-col w-full">
-								<h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+								<h3 className="text-2xl font-bold mb-6">{data?.contactInformation}</h3>
 								
 								<div className="space-y-6 flex-grow">
 									<div className="flex items-start space-x-4">
@@ -251,6 +255,7 @@ const Contact = ({ data }) => {
 											</svg>
 										</div>
 										<div>
+										<h4 className="font-semibold">{data?.contact?.name}</h4>
 											<h4 className="font-semibold">{contactName}</h4>
 										</div>
 									</div>
@@ -262,7 +267,7 @@ const Contact = ({ data }) => {
 											</svg>
 										</div>
 										<div>
-											<h4 className="font-semibold">Email</h4>
+											<h4 className="font-semibold">{data?.contact?.email}</h4>
 											<p className="text-gray-300">{contactEmail}</p>
 										</div>
 									</div>
@@ -274,7 +279,7 @@ const Contact = ({ data }) => {
 											</svg>
 										</div>
 										<div>
-											<h4 className="font-semibold">Phone</h4>
+											<h4 className="font-semibold">{data?.contact?.phone}</h4>
 											<p className="text-gray-300">{phone}</p>
 										</div>
 									</div>
@@ -287,7 +292,7 @@ const Contact = ({ data }) => {
 											</svg>
 										</div>
 										<div>
-											<h4 className="font-semibold">Location</h4>
+											<h4 className="font-semibold">{data?.contact?.location}</h4>
 											<p className="text-gray-300">{city}, {state} {zip}</p>
 										</div>
 									</div>
@@ -299,7 +304,7 @@ const Contact = ({ data }) => {
 										<svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
 										</svg>
-										<span className="text-sm">Response within 24 hours</span>
+										<span className="text-sm">{data?.contact?.response}</span>
 									</div>
 								</div>
 							</div>

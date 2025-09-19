@@ -1,15 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import App from '@/components/App';
 
 
 export default function Services() {
+	const [isHebrew, setIsHebrew] = useState(false);
+
 	return (
         <App title="Services"
             description="First Choice AI - Digital Marketing and Web Application Development - Services." >
             
             <div className='blog-container'>
+                {/* Language Toggle Button */}
+                <div className="mb-6 text-center">
+                    <div className="flex gap-2 bg-white/10 backdrop-blur-sm rounded-full p-1 inline-flex">
+                        <Link 
+                            href="/services" 
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                                !isHebrew 
+                                    ? 'bg-white text-gray-800 shadow-lg' 
+                                    : 'text-white hover:bg-white/20'
+                            }`}
+                            onClick={() => setIsHebrew(false)}
+                        >
+                            English
+                        </Link>
+                        <Link 
+                            href="/services-he" 
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                                isHebrew 
+                                    ? 'bg-white text-gray-800 shadow-lg' 
+                                    : 'text-white hover:bg-white/20'
+                            }`}
+                            onClick={() => setIsHebrew(true)}
+                        >
+                            עברית
+                        </Link>
+                    </div>
+                </div>
                 <div className='flex flex-col gap-5 services'  dir='rtl'>
                        <h1 className="my-5 text-white text-[36px]"  dir='rtl'> שרותי פיתוח ופירסום</h1>
                        <h2 className="text-[24px]" >עיצוב וביצוע של דף נחיתה לעסק <br/>לאיסוף כתובות אימייל ואו מספרי טלפון של לקוחות פוטנציאלים </h2>

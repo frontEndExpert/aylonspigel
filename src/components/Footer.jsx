@@ -27,10 +27,10 @@ const Footer = ({ data }) => {
 						{/* Brand Section */}
 						<div className="text-center md:text-left">
 							<h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-								Aylon Spigel
+								{data?.name}
 							</h3>
 							<p className="text-gray-300 mb-6">
-								Building the Internet Since 1996. Specializing in AI-powered web solutions and automation.
+								{data?.footerSub}
 							</p>
 							<div className="flex justify-center md:justify-start space-x-4">
 								{networks}
@@ -66,15 +66,15 @@ const Footer = ({ data }) => {
 
 						{/* Contact & Legal */}
 						<div className="text-center md:text-right">
-							<h4 className="text-lg font-semibold mb-6">Contact & Legal</h4>
+							<h4 className="text-lg font-semibold mb-6">{data?.legal}</h4>
 							<div className="space-y-3">
-								<p className="text-gray-300">
-									<a href={`mailto:${data?.email}`} className="hover:text-white transition-colors duration-300">
+								<p className="text-white">
+									<a href={`mailto:${data?.email}`} className="hover:text-green transition-colors duration-300">
 										{data?.email}
 									</a>
 								</p>
-								<p className="text-gray-300">
-									<a href={`tel:${data?.phone}`} className="hover:text-white transition-colors duration-300">
+								<p className="text-white">
+									<a href={`tel:${data?.phone}`} className="hover:text-green transition-colors duration-300">
 										{data?.phone}
 									</a>
 								</p>
@@ -82,7 +82,7 @@ const Footer = ({ data }) => {
 									href='/privacy' 
 									className="text-gray-300 hover:text-white transition-colors duration-300 block"
 								>
-									Privacy Policy
+									{data?.policy}
 								</Link>
 							</div>
 						</div>
@@ -91,7 +91,7 @@ const Footer = ({ data }) => {
 					{/* Divider */}
 					<div className="border-t border-gray-700 mt-12 pt-8">
 						<div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-							<div className="text-gray-400 text-sm">
+							<div className="text-white text-sm">
 								Made with ❤️ by{' '}
 								<a 
 									title='frontend expert' 
@@ -100,11 +100,11 @@ const Footer = ({ data }) => {
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									Aylon Spigel
+									{data?.name}
 								</a>
 							</div>
 							
-							<div className="text-gray-400 text-sm">
+							<div className="text-white text-sm">
 								© {new Date().getFullYear()} All rights reserved
 							</div>
 						</div>

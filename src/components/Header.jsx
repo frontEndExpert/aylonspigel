@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = ({ data }) => {
+	const [isHebrew, setIsHebrew] = useState(false);
+
 	if (data) {
 		var profilepic = '/static/images/' + data.image;
 		var networks = data.social.map(function (network) {
@@ -28,33 +31,58 @@ const Header = ({ data }) => {
 			{/* Main Content Container */}
 			<div className="max-w-4xl mx-auto px-4 text-center flex flex-col items-center justify-center">
 					
-					
-					
+					{/* Language Toggle Button */}
+					<div className="mb-6">
+						<div className="flex gap-2 bg-white/10 backdrop-blur-sm rounded-full p-1">
+							<Link 
+								href="/" 
+								className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+									!isHebrew 
+										? 'bg-white text-gray-800 shadow-lg' 
+										: 'text-white hover:bg-white/20'
+								}`}
+								onClick={() => setIsHebrew(false)}
+							>
+								English
+							</Link>
+							<Link 
+								href="/index-he" 
+								className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+									isHebrew 
+										? 'bg-white text-gray-800 shadow-lg' 
+										: 'text-white hover:bg-white/20'
+								}`}
+								onClick={() => setIsHebrew(true)}
+							>
+								עברית
+							</Link>
+						</div>
+					</div>
 					
 					<div className="mb-6">
                     {/* Profile Image */}
-						<div className="flex justify-center mb-4">
-							<Image
-									className="rounded-full relative border-4 border-white/20 shadow-2xl"
-									src={profilepic || '/static/images/aylon.png'}
-									alt="Aylon's Profile Pic"
-									width={120}
-									height={120}
-								/>
-						</div>
+					<div className="flex justify-center mb-4">
+						<Image
+								className="rounded-full relative border-4 border-white/20 shadow-2xl"
+								src={profilepic || '/static/images/aylon.png'}
+								alt="Aylon's Profile Pic"
+								width={120}
+								height={120}
+							/>
+					</div>
 {/* Name */}
 						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-secondary leading-tight">
-							Aylon Spigel
+							{data?.name || "Aylon Spigel"}
 						</h1>
 {/* Headline */}		<br/>
 						<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
-							Automate Your Workflow, Amplify Your Growth
+							{data?.headline || "Automate Your Workflow, Amplify Your Growth"}
 						</h2>
 						<br/>
 {/* Description */}
                     <div className="mb-6">
 						<p className="text-xl sm:text-xl text-gray-300 font-bold max-w-3xl mx-auto ">
-							I help businesses save 10+ hours a week by building custom AI automations that handle lead qualification, data sync, and repetitive tasks—so you can focus on what matters.
+							{data?.description || "I help businesses save 10+ hours a week by building custom AI automations that handle lead qualification, data sync, and repetitive tasks—so you can focus on what matters."}
 						</p>
 					</div>
 					</div>
@@ -67,7 +95,7 @@ const Header = ({ data }) => {
 							href="#services" 
 							className="bg-brand-accent hover:bg-brand-accent/90 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center gap-3"
 						>
-							<span>Book a Free Audit</span>
+							<span>{data?.call2action2 || "Book a Free Audit"}</span>
 							<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
 								<path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
 							</svg>

@@ -27,10 +27,10 @@ const HomePage = () => {
 		<div className='home-page'>
 			<Nav />
 			<Header data={resumeData.main} />
-			<Business data={resumeData.main} />
+			<Business data={resumeData.business} />
 			<Portfolio data={resumeData.portfolio} />
 			<Testimonials data={resumeData.testimonials} />
-			<Contact data={resumeData.main} />
+			<Contact data={resumeData} />
 			<Footer data={resumeData.main} />
 		</div>
 	);

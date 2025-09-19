@@ -2,8 +2,13 @@
   "main": {
     "name": "Aylon Spigel",
     "occupation": "Full Stack Developer",
-    "description": "Building the Internet Since 1996.",
+    "description": "I help businesses save 10+ hours a week by building custom AI automations that handle lead qualification, data sync, and repetitive tasks—so you can focus on what matters.",
+    "headline": "Automate Your Workflow, Amplify Your Growth",
     "image": "aylon.png",
+    "footerSub": "Business Process Efficiency Consultant helping companies accelerate growth and streamline operations through advanced AI technologies, chatbots, automation platforms (n8n, Zapier, Make), and strategic social media marketing.",
+    "quickLink": "Quick Links",
+    "legal": "Phone & Email",
+    "policy": "Privacy Policy",
     "bio": "I like to use technology to improve processes. And since my Master's degree in Multimedia, I have worked as a programmer for many advertising companies from New York and San Francisco to Bangkok and Tel Aviv.",
     "bio2": "One of my first major projects was to create a multimedia interactive experience for the Columbus Center of Marine Biology in Baltimore. I used Adobe Authorware, the only compatible software at the time, and a network of SPARC stations. The experience was a museum tour that was monitored by interactive kiosks along the way. Students could use SPARC stations to participate in the tour. These computers, which were popular in the early 1990s, provided information about marine life and tracked students' progress through the museum.",
     "bio3": "On one hand I enjoyed working with CEOs to bring their vision into a working web application, while on the other working within international teams, all from the comfort of my home office. I was proud to work with Microsoft even if it was a short project. I gain a lot of experience with many new technologies and the agile way of working in those big hightech companies. I also like to work directly with the business owners who need help to improve the way they get new clients, providing them with good marketing and landing pages on one hand and chatbots, AI and automation on the other.",
@@ -122,7 +127,7 @@
       }
     ]
   },
-  "portfolio": {
+  "portfolio2": {
     "projects": [
       {
         "title": "ALPHA clinic (AI agent)",
@@ -169,6 +174,15 @@
     ]
   },
   "testimonials": {
+    "title": "What Clients Say",
+    "subtitle": "Real feedback from business owners who've transformed their operations with AI automation",
+    "why": "Why Business Owners Choose Me",
+    "proven": "Proven Results",
+    "delivering": "Delivering measurable outcomes that drive business growth",
+    "fast": "Fast Delivery",
+    "personal": "Personal Touch",
+    "dedicated": "Dedicated attention and customized solutions for each client",
+    "quick": "Quick turnaround times without compromising quality",
     "testimonials": [
       {
         "text": "We were struggling to manage inquiries and bookings efficiently. Aylon built us a  booking system that qualified leads, automated responses, and book appointments. The result? A 40% reduction in administrative time and a 28% increase in confirmed bookings within the first quarter. I cannot recommend him highly enough.",
@@ -183,5 +197,109 @@
         "user": "Sarah M."
       }
     ]
+  },
+  "business": {
+    "title": "Real Results, Not Just Promises",
+    "subtitle": "Here's how I've helped businesses like yours save time and increase revenue.",
+    "call2action": "See How It Works",
+    "call2action2": "Book a Free Audit",
+    "card1": {
+      "title": "AI-Powered Lead Qualifier",
+      "subtitle": "Never miss a high-value lead again. Automatically prioritize incoming leads so your sales team knows who to contact first."
+    },
+    "card2": {
+      "title": "Custom API Integration",
+      "subtitle": "Make your tools talk to each other. Connect your CRM, email, and apps to create seamless workflows that eliminate manual data entry."
+    },
+    "card3": {
+      "title": "Web Development & Fixes",
+      "subtitle": "A website that works as hard as you do. From building fast, modern sites to debugging complex issues—I ensure your online presence drives growth."
+    }
+  },
+  "portfolio": {
+    "title": "Real Results, Not Just Promises",
+    "subtitle": "Here's how I've helped businesses like yours save time and increase revenue.",
+    "problem": "The Problem",
+    "solution": "The Solution",
+    "tools": "Tools",
+    "results": "Results",
+    "caseStudies": [
+      {
+        "id": 1,
+        "title": "Automated Lead Qualification for Marketing Agency",
+        "problem": "The owner was spending hours daily reviewing contact form submissions, missing hot leads while wasting time on uninterested prospects.",
+        "solution": "Built a custom n8n workflow that captures form submissions, analyzes them with ChatGPT, and instantly scores leads based on budget, timeline, and project fit.",
+        "tools": [
+          "n8n",
+          "OpenAI API",
+          "Google Sheets"
+        ],
+        "results": [
+          "15+ hours saved per week",
+          "30% higher conversion rate on qualified leads",
+          "Faster response times to hot leads"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "E-commerce Integration for Specialty Retailer",
+        "problem": "Inventory data wasn't syncing between their website, Amazon store, and physical POS system, causing oversells and stock discrepancies.",
+        "solution": "Created a custom API integration that synchronizes inventory levels in real-time across all sales channels with automated low-stock alerts.",
+        "tools": [
+          "Node.js",
+          "REST APIs",
+          "Webhooks"
+        ],
+        "results": [
+          "Eliminated overselling incidents",
+          "Reduced inventory management time by 70%",
+          "Improved customer satisfaction with accurate stock information"
+        ]
+      }
+    ],
+    "videoSection": {
+      "title": "Automation Process In Action",
+      "description": "Watch how this automation captures lead information from your forms, seamlessly adds it to a database or Google Sheet, and then sends it to Perplexity AI for instant analysis and evaluation. The system enriches each lead with an AI-powered score, updating your database in real time. Your sales team can then prioritize the hottest, most urgent leads first—boosting efficiency, conversions, and overall performance.",
+      "videoUrl": "https://www.loom.com/embed/aeea9b00b837461097f1926d3c5e598a?sid=3370867a-5f35-4cd0-9c89-1279555a3e88"
+    },
+    "cta": {
+      "text": "Ready to create your own success story?",
+      "buttonText": "Start Your Project Today",
+      "interestedText": "Interested in similar results?",
+      "talkButtonText": "Let's Talk"
+    }
+  },
+  "contact": {
+    "ready": "Ready to start your project?",
+    "message": "The following form is for any questions you may have about my services. Moreover, it is being processed by an AI Automation that will send you a quick response. You can order a similar AI Automation for your business.",
+    "thankYou": "Thank you for your message!",
+    "contactYou": "I will contact you soon to answer your question.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "response": "Response within 24 hours",
+    "primaryNeed": "I mostly need help with?",
+    "budget": "Expected budget?",
+    "messageText": "Message",
+    "sendMessage": "Send me a message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "sendAnother": "Send Another Message",
+    "contactInformation": "Contact Information",
+    "primaryNeedOptions": {
+      "other": "Something Else",
+      "automation": "Automation & Workflows",
+      "api-integration": "API Integration",
+      "web-development": "Web Development & Fixes",
+      "video": "Promotional Video",
+      "ai-video-robot": "AI Video"
+    },
+    "budgetOptions": {
+      "under-1000": "Under $1,000",
+      "1000-5000": "$1,000 - $5,000",
+      "5000-plus": "$5,000+",
+      "need-quote": "I need a quote first"
+    }
   }
 }
