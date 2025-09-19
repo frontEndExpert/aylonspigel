@@ -37,44 +37,19 @@ const Footer = ({ data }) => {
 							</div>
 						</div>
 
-						{/* Quick Links */}
-						<div className="text-center">
-							<h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-							<ul className="space-y-3">
-								<li>
-									<a href="#home" className="text-gray-300 hover:text-white transition-colors duration-300">
-										Home
-									</a>
-								</li>
-								<li>
-									<a href="#about" className="text-gray-300 hover:text-white transition-colors duration-300">
-										About
-									</a>
-								</li>
-								<li>
-									<a href="#portfolio" className="text-gray-300 hover:text-white transition-colors duration-300">
-										Portfolio
-									</a>
-								</li>
-								<li>
-									<a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-300">
-										Contact
-									</a>
-								</li>
-							</ul>
-						</div>
+						
 
 						{/* Contact & Legal */}
 						<div className="text-center md:text-right">
 							<h4 className="text-lg font-semibold mb-6">{data?.legal}</h4>
 							<div className="space-y-3">
 								<p className="text-white">
-									<a href={`mailto:${data?.email}`} className="hover:text-green transition-colors duration-300">
+									<a href={`mailto:${data?.email}`} className="text-white hover:text-green transition-colors duration-300">
 										{data?.email}
 									</a>
 								</p>
-								<p className="text-white">
-									<a href={`tel:${data?.phone}`} className="hover:text-green transition-colors duration-300">
+								<p>
+									<a href={`tel:${data?.phone}`} className="text-white hover:text-green transition-colors duration-300">
 										{data?.phone}
 									</a>
 								</p>
