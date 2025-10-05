@@ -12,7 +12,7 @@ import resumeDataHe from '../../public/static/resumeDataHe.json';
 
 export default function HomeHe() {
 	return (
-		<App title="אילון שפיגל - אוטומציות AI" description="אילון שפיגל -  בונה אתרים ואוטומציות עם ניסיון של 25+ שנים ">
+		<App title="אוטומציית AI לניהול לידים | חסכו 10+ שעות בשבוע | אילון שפיגל" description="מעוניינים לחסוך 10+ שעות בשבוע? אני בונה מערכות אוטומציה עם בינה מלאכותית שממיינת ומדרגת לידים אוטומטית. התאימו את מערכת ניהול הלידים לעסק שלכם - קבלו בדיקת אוטומציה חינם!">
 			<div className="App">
 				<Header data={resumeDataHe.main} />
 				<Business data={resumeDataHe.business} />
