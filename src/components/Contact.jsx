@@ -1,15 +1,29 @@
 import React, { useState } from 'react';
 
 const Contact = ({ data }) => {
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	//const [contactPhone, setContactPhone] = useState('');
-	const [primaryNeed, setNeed] = useState('');
-	const [budget, setBudget] = useState('');
-	const [subject, setSubject] = useState('I have a question');
-	const [message, setMessage] = useState('');
+	// Form state based on JSON specification
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		preferred_contact_method: '',
+		phone_number: '',
+		help_topic: '',
+		timeline: '',
+		budget: '',
+		referral_source: '',
+		project_description: ''
+	});
+	
 	const [emailSubmited, setEmailSubmited] = useState(false);
 	const [isSubmitting, setIsSubmitting] = useState(false);
+
+	// Helper function to update form data
+	const updateFormData = (field, value) => {
+		setFormData(prev => ({
+			...prev,
+			[field]: value
+		}));
+	};
 
 	if (data) {
 		var contactName = data.main?.name;
@@ -35,58 +49,60 @@ const Contact = ({ data }) => {
 		
 		if (isSubmitting) return; // Prevent multiple submissions
 		
-		console.log('event.target.value', event.target.value);
-		if (
-			name?.trim().length > 0 &&
-			email?.trim().length > 0 &&
-			isEmail(email) &&
-			budget &&
-			primaryNeed &&
-			message.trim().length > 0
-		) {
-			setIsSubmitting(true);
-			
-			//let url = 'https://business4u.app.n8n.cloud/webhook-test/form-submission'; // test url
-			//let url = 'https://business4u.app.n8n.cloud/webhook/form-submission'; // production url
-			//let url = 'https://hook.eu2.make.com/q75ntfikofa2s673z4577qf1lgemoiyx'; // production url
-			let url = 'https://hook.eu2.make.com/s5nl9u6801l5sp6s41v0mr4ya4ujdvwc';
+		// Validate required fields based on JSON specification
+		const requiredFields = ['name', 'email', 'help_topic'];
+		const missingFields = requiredFields.filter(field => !formData[field]?.trim());
+		
+		if (missingFields.length > 0 || !isEmail(formData.email)) {
+			alert('Please fill out all required fields (Name, Email, and Help Topic)');
+			return;
+		}
+		
+		setIsSubmitting(true);
+		
+		//let url = 'https://business4u.app.n8n.cloud/webhook-test/form-submission'; // test url
+		//let url = 'https://business4u.app.n8n.cloud/webhook/form-submission'; // production url
+		//let url = 'https://hook.eu2.make.com/q75ntfikofa2s673z4577qf1lgemoiyx'; // production url
+		//let url = 'https://hook.eu2.make.com/s5nl9u6801l5sp6s41v0mr4ya4ujdvwc';
+		let url = 'https://hook.eu2.make.com/u73orq5oxns52ux2kfmu16wifxe6zymg';
 
-			let body = JSON.stringify({
-				name: name,
-				email: email,
-				primaryNeed: primaryNeed,
-				budget: budget,
-				message: message || 'without a message',
+		let body = JSON.stringify({
+			name: formData.name,
+			email: formData.email,
+			preferred_contact_method: formData.preferred_contact_method,
+			phone_number: formData.phone_number,
+			help_topic: formData.help_topic,
+			timeline: formData.timeline,
+			budget: formData.budget,
+			referral_source: formData.referral_source,
+			project_description: formData.project_description || 'No description provided',
+		});
+
+		try {
+			console.log('Sending form data:', body);
+			let response = await fetch(url, {
+				method: 'POST',
+				body,
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				mode: 'cors',
 			});
-
-			try {
-				console.log('Sending form data:', body);
-				let response = await fetch(url, {
-					method: 'POST',
-					body,
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					mode: 'cors',
-				});
-				
-				
-				if (response.ok) {
-					setEmailSubmited(true);
-					console.log('Form submitted successfully');
-				} else {
-					const errorText = await response.text();
-					console.error('Server error:', response.status, errorText);
-					alert(`Server error: ${response.status}. Please try again later.`);
-				}
-			} catch (error) {
-				console.error('Fetch error:', error);
-				alert(`Network error: ${error.message}. Please check your internet connection and try again.`);
-			} finally {
-				setIsSubmitting(false);
+			
+			
+			if (response.ok) {
+				setEmailSubmited(true);
+				console.log('Form submitted successfully');
+			} else {
+				const errorText = await response.text();
+				console.error('Server error:', response.status, errorText);
+				alert(`Server error: ${response.status}. Please try again later.`);
 			}
-		} else {
-			alert('Please fill out all required fields');
+		} catch (error) {
+			console.error('Fetch error:', error);
+			alert(`Network error: ${error.message}. Please check your internet connection and try again.`);
+		} finally {
+			setIsSubmitting(false);
 		}
 	};
 
@@ -128,103 +144,190 @@ const Contact = ({ data }) => {
 								</div>
 							) : (
 								<div className="bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900 rounded-2xl p-8 shadow-xl border border-slate-700">
-									<h2 className="text-2xl font-bold text-white mb-6">{data?.contact?.sendMessage}</h2>
-									<form onSubmit={submitForm} className="space-y-4">
+									<h2 className="text-2xl font-bold text-white mb-6">{data?.contact?.sendMessage || "Get In Touch"}</h2>
+									<form onSubmit={submitForm} className="space-y-6">
+										{/* Name and Email - Required */}
 										<div className="grid md:grid-cols-2 gap-4">
 											<div>
-												<label htmlFor='contactName' className="block text-sm font-medium text-cyan-300 mb-1">
-													{data?.contact?.name} <span className='text-red-400'>*</span>
+												<label htmlFor='name' className="block text-sm font-medium text-cyan-300 mb-1">
+												{data?.contact?.fullname || "Full Name"} <span className='text-red-400'>*</span>
 												</label>
 												<input
 													type='text'
-													value={name}
-													id='contactName'
-													name='contactName'
-													onChange={(e) => setName(e.target.value)}
+													value={formData.name}
+													id='name'
+													name='name'
+													onChange={(e) => updateFormData('name', e.target.value)}
 													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
 													placeholder="Your full name"
+													required
 												/>
 											</div>
 
 											<div>
-												<label htmlFor='contactEmail' className="block text-sm font-medium text-cyan-300 mb-1">
-													{data?.contact?.email} <span className='text-red-400'>*</span>
+												<label htmlFor='email' className="block text-sm font-medium text-cyan-300 mb-1">
+													Email Address <span className='text-red-400'>*</span>
 												</label>
 												<input
 													type='email'
-													value={email}
-													id='contactEmail'
-													name='contactEmail'
-													onChange={(e) => setEmail(e.target.value)}
+													value={formData.email}
+													id='email'
+													name='email'
+													onChange={(e) => updateFormData('email', e.target.value)}
 													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
 													placeholder="your.email@example.com"
+													required
 												/>
 											</div>
 										</div>
 
 										<div className="grid md:grid-cols-2 gap-4">
+										{/* Preferred Contact Method */}
+										<div>
+											<label htmlFor='preferred_contact_method' className="block text-sm font-medium text-cyan-300 mb-1">
+												{data?.contact?.preferred || "Preferred Contact Method"}
+											</label>
+											<select
+												value={formData.preferred_contact_method}
+												id='preferred_contact_method'
+												name='preferred_contact_method'
+												onChange={(e) => updateFormData('preferred_contact_method', e.target.value)}
+												className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
+											>
+												<option value="">{data?.contact?.selectpreferred || "Select preferred method"} </option>
+												<option value="Email">{data?.contact?.email || "Email"}</option>
+												<option value="Phone (optional)">{data?.contact?.phoneOptional || "Phone (optional)"} </option>
+												<option value="WhatsApp (optional)">{data?.contact?.whatsapp || "WhatsApp"} </option>
+											</select>
+										</div>
+
+										{/* Phone Number */}
+										<div>
+											<label htmlFor='phone_number' className="block text-sm font-medium text-cyan-300 mb-1">
+												{data?.contact?.phoneNumber || "Phone 2 Number"}
+											</label>
+											<input
+												type='tel'
+												value={formData.phone_number}
+												id='phone_number'
+												name='phone_number'
+												onChange={(e) => updateFormData('phone_number', e.target.value)}
+												className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
+												placeholder="Your phone number"
+											/>
+                                            <p className="text-xs text-slate-400 mt-1">Optional, only if you&apos;d like us to call you</p>
+										</div>
+										</div>
+
+										<div className="grid md:grid-cols-2 gap-4">
+										{/* Help Topic - Required */}
+										<div>
+											<label htmlFor='help_topic' className="block text-sm font-medium text-cyan-300 mb-1">
+											{data?.contact?.primaryNeed || "I mostly need help with..."} <span className='text-red-400'>*</span>
+											</label>
+											<select
+												value={formData.help_topic}
+												id='help_topic'
+												name='help_topic'
+												onChange={(e) => updateFormData('help_topic', e.target.value)}
+												className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
+												required
+											>
+												<option value="">{data?.contact?.selectNeed || "Select what you need help with"}</option>
+												<option value="Strategy">{data?.contact?.strategy || "Strategy"}</option>
+												<option value="Get more from my leads">{data?.contact?.fromLeads || "Get more from my leads"}</option>
+												<option value="Get more leads">{data?.contact?.moreleads || "Get more leads"}</option>
+												<option value="website development">{data?.contact?.website || "Website development"}</option>
+												<option value="promotional AI video">{data?.contact?.video || "Promotional AI video"}</option>
+												<option value="chatbot for my website">{data?.contact?.chatbot || "Chatbot for my website"}</option>
+												<option value="using AI in the office">{data?.contact?.usingAI || "Using AI in the office"}</option>
+												<option value="Other">{data?.contact?.other || "Other"}</option>
+											</select>
+										</div>
+
+										{/* Timeline and Budget */}
 											<div>
-												<label htmlFor='primaryNeed' className="block text-sm font-medium text-cyan-300 mb-1">
-													{data?.contact?.primaryNeed} <span className='text-red-400'>*</span>
+												<label htmlFor='timeline' className="block text-sm font-medium text-cyan-300 mb-1">
+												{data?.contact?.timeline || "What's your timeline?"}
 												</label>
 												<select
-													value={primaryNeed}
-													id='primaryNeed'
-													name='primaryNeed'
-													onChange={(e) => setNeed(e.target.value)}
+													value={formData.timeline}
+													id='timeline'
+													name='timeline'
+													onChange={(e) => updateFormData('timeline', e.target.value)}
 													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
-													required
 												>
-													{Object.entries(data?.contact?.primaryNeedOptions || {
-														"other": "Something Else",
-														"automation": "Automation & Workflows",
-														"api-integration": "API Integration",
-														"web-development": "Web Development & Fixes",
-														"video": "Promotional Video",
-														"ai-video-robot": "AI Video"
-													}).map(([value, label]) => (
-														<option key={value} value={value}>{label}</option>
-													))}
-												</select>
-											</div>
-											<div>
-												<label htmlFor="budget" className="block text-sm font-medium text-cyan-300 mb-1">
-													{data?.contact?.budget} <span className='text-red-400'>*</span>
-												</label>
-												<select 
-													id="budget" 
-													name="budget" 
-													onChange={(e) => setBudget(e.target.value)}
-													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
-													required
-												>
-													{Object.entries(data?.contact?.budgetOptions || {
-														"under-1000": "Under $1,000",
-														"1000-5000": "$1,000 - $5,000",
-														"5000-plus": "$5,000+",
-														"need-quote": "I need a quote first"
-													}).map(([value, label]) => (
-														<option key={value} value={value}>{label}</option>
-													))}
+													<option value="">{data?.contact?.selectTimeline || "Select timeline"}</option>
+													<option value="ASAP">{data?.contact?.asap || "ASAP"}</option>
+													<option value="Next Month">{data?.contact?.nextMonth || "Next Month"}</option>
+													<option value="Flexible">{data?.contact?.flexible || "Flexible"}</option>
 												</select>
 											</div>
 										</div>
-
-									
-
+										<div className="grid md:grid-cols-2 gap-4">
+											<div>
+												<label htmlFor='budget' className="block text-sm font-medium text-cyan-300 mb-1">
+													{data?.contact?.estimatedBudget || "Estimated Budget"}
+												</label>
+												<select
+													value={formData.budget}
+													id='budget'
+													name='budget'
+													onChange={(e) => updateFormData('budget', e.target.value)}
+													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
+												>
+													<option value="">{data?.contact?.selectBudget || "Select budget range"}</option>
+													<option value="Unsure">{data?.contact?.unsure || "Unsure"}</option>
+													<option value="Up to 5k">{data?.contact?.upTo5k || "Up to 5k"}</option>
+													<option value="5k-10k">{data?.contact?.fiveToTenK || "5k-10k"}</option>
+													<option value="10k+">{data?.contact?.tenKPlus || "10k+"}</option>
+												</select>
+												<p className="text-xs text-slate-400 mt-1">{data?.contact?.optional || "Optional, helps us recommend the best solutions"}</p>
+											</div>
+										
+										{/* Referral Source */}
 										<div>
-											<label htmlFor='contactMessage' className="block text-sm font-medium text-cyan-300 mb-1">
-												{data?.contact?.messageText} <span className='text-red-400'>*</span>
+											<label htmlFor='referral_source' className="block text-sm font-medium text-cyan-300 mb-1">
+												{data?.contact?.howDidYouHearAboutUs || "How did you hear about us?"}
+											</label>
+											<select
+												value={formData.referral_source}
+												id='referral_source'
+												name='referral_source'
+												onChange={(e) => updateFormData('referral_source', e.target.value)}
+												className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white transition-all duration-200"
+											>
+												<option value="">{data?.contact?.selectReferralSource || "Select referral source"}</option>
+												<option value="Google">{data?.contact?.google || "Google"}</option>
+												<option value="Facebook">{data?.contact?.facebook || "Facebook"}</option>
+												<option value="LinkedIn">{data?.contact?.linkedin || "LinkedIn"}</option>
+												<option value="Friend">{data?.contact?.friend || "Friend"}</option>
+												<option value="Other">{data?.contact?.other || "Other"}</option>
+											</select>
+										</div>
+										</div>
+										{/* Project Description */}
+										<div>
+											<label htmlFor='project_description' className="block text-sm font-medium text-cyan-300 mb-1">
+												{data?.contact?.projectDescription || "Describe your challenge or project (optional)"}
 											</label>
 											<textarea
-												value={message}
-												onChange={(e) => setMessage(e.target.value)}
-												id='contactMessage'
-												name='contactMessage'
+												value={formData.project_description}
+												onChange={(e) => updateFormData('project_description', e.target.value)}
+												id='project_description'
+												name='project_description'
 												rows={4}
 												className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200 resize-none"
-												placeholder="Tell me about your project..."
+												placeholder="Tell us more about your project or challenge..."
 											></textarea>
+											<p className="text-xs text-slate-400 mt-1">{data?.contact?.projectDescriptionOptional || "Helps us understand and respond better"}</p>
+										</div>
+
+										{/* Privacy Notice */}
+										<div className="bg-slate-800/50 rounded-lg p-4 border border-slate-600">
+											<p className="text-sm text-slate-300">
+                                                <span className="text-cyan-400 font-medium">{data?.contact?.privacyNotice || "Privacy Notice:"}</span> {data?.contact?.privacyNoticeMessage || "We'll never share your info. Only used to match you with the right advisor."}
+											</p>
 										</div>
 
 										<button 
@@ -237,7 +340,7 @@ const Contact = ({ data }) => {
 													: 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 border-cyan-400/30'
 											}`}
 										>
-							{isSubmitting ? data?.contact?.sending : data?.contact?.send }
+											{isSubmitting ? (data?.contact?.sending || "Sending...") : (data?.contact?.send || "Send Message")}
 										</button>
 									</form>
 								</div>
@@ -281,7 +384,7 @@ const Contact = ({ data }) => {
 											</svg>
 										</div>
 										<div>
-											<h4 className="font-semibold">{data?.contact?.phone}</h4>
+											<h4 className="font-semibold">{data?.contact?.phoneNumber}</h4>
 											<p className="text-gray-300">{phone}</p>
 										</div>
 									</div>
