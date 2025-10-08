@@ -92,7 +92,7 @@ const Header = ({ data }) => {
 					{/* CTA Button */}
 					<div className="mb-8">
 						<a 
-							href="#services" 
+							href="#contact" 
 							className="bg-brand-accent hover:bg-brand-accent/90 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center gap-3"
 						>
 							<span>{data?.call2action2 || "Book a Free Audit"}</span>

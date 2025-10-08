@@ -159,14 +159,14 @@ const Contact = ({ data }) => {
 													name='name'
 													onChange={(e) => updateFormData('name', e.target.value)}
 													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
-													placeholder="Your full name"
+													placeholder="{}Your full name"
 													required
 												/>
 											</div>
 
 											<div>
 												<label htmlFor='email' className="block text-sm font-medium text-cyan-300 mb-1">
-													Email Address <span className='text-red-400'>*</span>
+												{data?.contact?.emailAddress || "Email Address"} <span className='text-red-400'>*</span>
 												</label>
 												<input
 													type='email'
@@ -213,9 +213,9 @@ const Contact = ({ data }) => {
 												name='phone_number'
 												onChange={(e) => updateFormData('phone_number', e.target.value)}
 												className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
-												placeholder="Your phone number"
+												placeholder={data?.contact?.phoneNumberOptional || "Your phone number"}
 											/>
-                                            <p className="text-xs text-slate-400 mt-1">Optional, only if you&apos;d like us to call you</p>
+                                            <p className="text-xs text-slate-400 mt-1">{data?.contact?.phoneOptionalRem || "Optional, only if you'd like us to call you"} </p>
 										</div>
 										</div>
 

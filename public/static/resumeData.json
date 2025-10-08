@@ -277,6 +277,7 @@
     "name": "Name",
     "fullname": "Full Name",
     "email": "Email",
+    "emailAddress": "Email Address",
     "preferred": "Preferred Contact Method",
     "selectpreferred": "Select preferred method",
     "phoneOptional": "Phone (optional)",
@@ -291,7 +292,7 @@
     "moreleads": "Get more leads",
     "website": "Website development",
     "video": "Promotional AI video",
-    "chatbot": "Chatbot for my website",
+    "chatbot": "AI Agent for my website",
     "usingAI": "Using AI in the office",
     "other": "Other",
     "howDidYouHearAboutUs": "How did you hear about us?",
@@ -315,6 +316,7 @@
     "projectDescription": "Describe your challenge or project (optional)",
     "projectDescriptionOptional": "Helps us understand and respond better",
     "phoneNumberOptional": "Optional, only if you'd like us to call you",
+    "phoneOptionalRem": "Optional, only if you'd like us to call you",
     "privacyNotice": "Privacy Notice:",
     "privacyNoticeMessage": "We'll never share your info. Only used to match you with the right advisor.",
     "timeline": "What's your timeline?",
@@ -323,20 +325,6 @@
     "send": "Send Message",
     "sending": "Sending...",
     "sendAnother": "Send Another Message",
-    "contactInformation": "Contact Information",
-    "primaryNeedOptions": {
-      "other": "Something Else",
-      "automation": "AI Automation",
-      "web-development": "Web Development",
-      "video": "Promotional Video",
-      "ai-live-agent": "AI Live Agent"
-    },
-    "budgetOptions": {
-      "under-1000": "Under $1,000",
-      "1000-5000": "$1,000 - $5,000",
-      "5000-10000": "$5,000 - $10,000",
-      "10000-plus": "$10,000+",
-      "need-quote": "I need a quote first"
-    }
+    "contactInformation": "Contact Information"
   }
 }
