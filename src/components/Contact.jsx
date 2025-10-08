@@ -159,7 +159,7 @@ const Contact = ({ data }) => {
 													name='name'
 													onChange={(e) => updateFormData('name', e.target.value)}
 													className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200"
-													placeholder="{}Your full name"
+													placeholder={data?.contact?.fullname || "Your full name"}
 													required
 												/>
 											</div>
@@ -318,7 +318,7 @@ const Contact = ({ data }) => {
 												name='project_description'
 												rows={4}
 												className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-slate-400 transition-all duration-200 resize-none"
-												placeholder="Tell us more about your project or challenge..."
+												placeholder={data?.contact?.projectDescriptionOptional || "Tell us more about your project or challenge..."}
 											></textarea>
 											<p className="text-xs text-slate-400 mt-1">{data?.contact?.projectDescriptionOptional || "Helps us understand and respond better"}</p>
 										</div>
