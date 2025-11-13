@@ -71,6 +71,16 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.clear-both {
+  clear: both;
+}
+
 .blog-header {
   margin: auto;
   text-align: center;
@@ -99,6 +109,23 @@
   width: 450px;
   height: auto;
   margin: 20px 0 20px 40px;
+}
+
+/* Responsive styles for blog images */
+@media only screen and (max-width: 768px) {
+  .robot3,
+  .robot4,
+  .robot5 {
+    float: none !important;
+    display: block;
+    margin: 20px auto !important;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .blog-container {
+    padding: 15px;
+  }
 }
 
 .arrow {

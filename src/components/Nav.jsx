@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isBlogDropdownOpen, setIsBlogDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,12 +18,35 @@ const Nav = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsBlogDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setIsBlogDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+  }, [router.pathname]);
+
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#portfolio', label: 'Portfolio' },
-    { href: '#testimonials', label: 'Testimonials' },
-    { href: '#contact', label: 'Contact' }
+    { href: '#home', label: 'Home', isHash: true },
+    { href: '#about', label: 'About', isHash: true },
+    { href: '#portfolio', label: 'Portfolio', isHash: true },
+    { href: '#testimonials', label: 'Testimonials', isHash: true },
+    { href: '#contact', label: 'Contact', isHash: true }
+  ];
+
+  const blogSubmenu = [
+    { href: '/blog/robots-future', label: 'Robots Future' },
+    { href: '/blog/ai-white-paper', label: 'AI White Paper' }
   ];
 
   const scrollToSection = (href) => {
@@ -29,9 +57,12 @@ const Nav = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Always show background on non-home pages
+  const showBackground = isScrolled || router.pathname !== '/';
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
+      showBackground
         ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
         : 'bg-transparent'
     }`}>
@@ -39,35 +70,102 @@ const Nav = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a 
-              href="#home" 
-              className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-              onClick={() => scrollToSection('#home')}
-            >
-              AS
-            </a>
+            {router.pathname === '/' ? (
+              <a 
+                href="#home" 
+                className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('#home');
+                }}
+              >
+                AS
+              </a>
+            ) : (
+              <Link 
+                href="/"
+                className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent cursor-pointer"
+              >
+                AS
+              </Link>
+            )}
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.href);
-                  }}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 ${
-                    isScrolled 
-                      ? 'text-gray-700 hover:text-blue-600' 
-                      : 'text-white hover:text-blue-300'
-                  }`}
-                >
-                  {item.label}
-                </a>
+                item.isHash ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (router.pathname === '/') {
+                        scrollToSection(item.href);
+                      } else {
+                        router.push(`/${item.href}`);
+                      }
+                    }}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 ${
+                      showBackground
+                        ? 'text-gray-700 hover:text-blue-600' 
+                        : 'text-white hover:text-blue-300'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 ${
+                      showBackground
+                        ? 'text-gray-700 hover:text-blue-600' 
+                        : 'text-white hover:text-blue-300'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
+              
+              {/* Blog Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsBlogDropdownOpen(!isBlogDropdownOpen)}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 flex items-center ${
+                      showBackground
+                        ? 'text-gray-700 hover:text-blue-600' 
+                        : 'text-white hover:text-blue-300'
+                    }`}
+                >
+                  Blog
+                  <svg 
+                    className={`ml-1 h-4 w-4 transition-transform duration-300 ${isBlogDropdownOpen ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {isBlogDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
+                    {blogSubmenu.map((subItem) => (
+                      <Link
+                        key={subItem.href}
+                        href={subItem.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                        onClick={() => setIsBlogDropdownOpen(false)}
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
@@ -77,7 +175,11 @@ const Nav = () => {
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('#contact');
+                if (router.pathname === '/') {
+                  scrollToSection('#contact');
+                } else {
+                  router.push('/#contact');
+                }
               }}
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
@@ -90,7 +192,7 @@ const Nav = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`p-2 rounded-md transition-colors duration-300 ${
-                isScrolled 
+                showBackground
                   ? 'text-gray-700 hover:text-blue-600' 
                   : 'text-white hover:text-blue-300'
               }`}
@@ -112,24 +214,81 @@ const Nav = () => {
         <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.href);
-                }}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
-              >
-                {item.label}
-              </a>
+              item.isHash ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (router.pathname === '/') {
+                      scrollToSection(item.href);
+                    } else {
+                      router.push(`/${item.href}`);
+                    }
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
+            
+            {/* Mobile Blog Dropdown */}
+            <div className="border-t border-gray-200 pt-2 mt-2">
+              <button
+                onClick={() => setIsBlogDropdownOpen(!isBlogDropdownOpen)}
+                className="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
+              >
+                Blog
+                <svg 
+                  className={`h-4 w-4 transition-transform duration-300 ${isBlogDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isBlogDropdownOpen && (
+                <div className="pl-4 mt-1 space-y-1">
+                  {blogSubmenu.map((subItem) => (
+                    <Link
+                      key={subItem.href}
+                      href={subItem.href}
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
+                      onClick={() => {
+                        setIsBlogDropdownOpen(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      {subItem.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            
             <div className="pt-4 pb-3 border-t border-gray-200">
               <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('#contact');
+                  if (router.pathname === '/') {
+                    scrollToSection('#contact');
+                  } else {
+                    router.push('/#contact');
+                  }
+                  setIsMobileMenuOpen(false);
                 }}
                 className="block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center"
               >
