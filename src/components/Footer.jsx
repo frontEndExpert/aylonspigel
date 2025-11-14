@@ -4,15 +4,28 @@ import Link from 'next/link';
 const Footer = ({ data }) => {
 	if (data) {
 		var networks = data.social.map(function (network) {
+			// Map social network names to brand colors
+			const brandColors = {
+				facebook: 'hover:from-blue-500 hover:to-blue-600',
+				linkedin: 'hover:from-blue-700 hover:to-blue-800',
+				github: 'hover:from-gray-700 hover:to-gray-800',
+				twitter: 'hover:from-blue-400 hover:to-blue-500',
+				instagram: 'hover:from-pink-500 hover:to-purple-600',
+				youtube: 'hover:from-red-600 hover:to-red-700'
+			};
+			
+			const hoverColor = brandColors[network.name.toLowerCase()] || 'hover:from-blue-700 hover:to-purple-700';
+			
 			return (
 				<li key={network.name}>
 					<a 
 						href={network.url} 
-						className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110 shadow-lg"
+						className={`w-14 h-14 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white ${hoverColor} transition-all duration-300 transform hover:scale-125 shadow-lg hover:shadow-xl cursor-pointer`}
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label={`Visit our ${network.name} page`}
 					>
-						<i className={network.className}></i>
+						<i className={`${network.className} text-xl`}></i>
 					</a>
 				</li>
 			);
@@ -44,18 +57,19 @@ const Footer = ({ data }) => {
 							<h4 className="text-lg font-semibold mb-6">{data?.legal}</h4>
 							<div className="space-y-3">
 								<p className="text-white">
-									<a href={`mailto:${data?.email}`} className="text-white hover:text-green transition-colors duration-300">
+									<a href={`mailto:${data?.email}`} className="text-white hover:text-green transition-colors duration-300 cursor-pointer">
 										{data?.email}
 									</a>
 								</p>
 								<p>
-									<a href={`tel:${data?.phone}`} className="text-white hover:text-green transition-colors duration-300">
+									<a href={`tel:${data?.phone}`} className="text-white hover:text-green transition-colors duration-300 cursor-pointer">
 										{data?.phone}
 									</a>
 								</p>
 								<Link 
 									href='/privacy' 
-									className="text-gray-300 hover:text-white transition-colors duration-300 block"
+									className="text-white font-bold hover:text-blue-300 transition-colors duration-300 block"
+									style={{ cursor: 'pointer' }}
 								>
 									{data?.policy}
 								</Link>
