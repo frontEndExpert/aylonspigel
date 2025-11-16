@@ -122,10 +122,30 @@
     width: 100%;
     max-width: 300px;
   }
-  
+
   .blog-container {
     padding: 15px;
   }
+}
+
+/* Footer Privacy Link Override - Must override layout.scss footer a rules */
+footer a.privacy-link,
+footer a.privacy-link:link,
+footer a.privacy-link:visited,
+footer a.privacy-link:active {
+  color: #ffffff !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  text-decoration: none !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+footer a.privacy-link:hover,
+footer a.privacy-link:focus {
+  color: #93c5fd !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
 }
 
 .arrow {

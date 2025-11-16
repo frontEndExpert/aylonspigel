@@ -66,13 +66,22 @@ const Footer = ({ data }) => {
 										{data?.phone}
 									</a>
 								</p>
-								<Link 
-									href='/privacy' 
-									className="text-white font-bold hover:text-blue-300 transition-colors duration-300 block"
-									style={{ cursor: 'pointer' }}
-								>
-									{data?.policy}
+								<p>
+								<Link href='/privacy' legacyBehavior>
+									<a 
+										className="privacy-link font-bold hover:text-blue-300 transition-colors duration-300 block"
+										style={{ 
+											cursor: 'pointer',
+											color: '#ffffff',
+											textDecoration: 'none',
+											display: 'block',
+											pointerEvents: 'auto'
+										}}
+									>
+										{data?.policy}
+									</a>
 								</Link>
+								</p>
 							</div>
 						</div>
 					</div>
