@@ -148,6 +148,13 @@ footer a.privacy-link:focus {
   pointer-events: auto !important;
 }
 
+/* Ensure Nav component is always visible */
+nav.fixed {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 .arrow {
   width: 150px;
   height: auto;

@@ -36,7 +36,16 @@ const Nav = () => {
     setIsMobileMenuOpen(false);
   }, [router.pathname]);
 
-  const navItems = [
+  // Detect if we're on a Hebrew page
+  const isHebrew = router.pathname.includes('-he') || router.pathname === '/index-he';
+  
+  const navItems = isHebrew ? [
+    { href: '#home', label: 'בית', isHash: true },
+    { href: '#about', label: 'אודות', isHash: true },
+    { href: '#portfolio', label: 'תיק עבודות', isHash: true },
+    { href: '#testimonials', label: 'המלצות', isHash: true },
+    { href: '#contact', label: 'צור קשר', isHash: true }
+  ] : [
     { href: '#home', label: 'Home', isHash: true },
     { href: '#about', label: 'About', isHash: true },
     { href: '#portfolio', label: 'Portfolio', isHash: true },
@@ -44,10 +53,16 @@ const Nav = () => {
     { href: '#contact', label: 'Contact', isHash: true }
   ];
 
-  const blogSubmenu = [
+  const blogSubmenu = isHebrew ? [
+    { href: '/blog/robots-future', label: 'עתיד הרובוטים' },
+    { href: '/blog/ai-white-paper', label: 'מסמך עמדה על AI' }
+  ] : [
     { href: '/blog/robots-future', label: 'Robots Future' },
     { href: '/blog/ai-white-paper', label: 'AI White Paper' }
   ];
+
+  const getStartedText = isHebrew ? 'התחל עכשיו' : 'Get Started';
+  const blogLabel = isHebrew ? 'בלוג' : 'Blog';
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
@@ -58,19 +73,27 @@ const Nav = () => {
   };
 
   // Always show background on non-home pages
-  const showBackground = isScrolled || router.pathname !== '/';
+  const showBackground = isScrolled || (router.pathname !== '/' && router.pathname !== '/index-he');
+  // Check if we're on a blog page
+  const isBlogPage = router.pathname?.includes('/blog/');
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      showBackground
-        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
-        : 'bg-transparent'
-    }`}>
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+        showBackground
+          ? isBlogPage
+            ? 'bg-gradient-to-br from-gray-800 via-blue-900 to-gray-800 backdrop-blur-md shadow-lg border-b border-blue-700/50' 
+            : 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200'
+          : 'bg-transparent'
+      }`}
+      dir={isHebrew ? 'rtl' : 'ltr'}
+      style={{ zIndex: 100 }}
+    >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            {router.pathname === '/' ? (
+            {(router.pathname === '/' || router.pathname === '/index-he') ? (
               <a 
                 href="#home" 
                 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent cursor-pointer"
@@ -83,7 +106,7 @@ const Nav = () => {
               </a>
             ) : (
               <Link 
-                href="/"
+                href={isHebrew ? "/index-he" : "/"}
                 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent cursor-pointer"
               >
                 AS
@@ -93,7 +116,7 @@ const Nav = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className={`${isHebrew ? 'mr-10 flex-row-reverse space-x-reverse' : 'ml-10'} flex items-baseline space-x-8`}>
               {navItems.map((item) => (
                 item.isHash ? (
                   <a
@@ -101,15 +124,17 @@ const Nav = () => {
                     href={item.href}
                     onClick={(e) => {
                       e.preventDefault();
-                      if (router.pathname === '/') {
+                      if (router.pathname === '/' || router.pathname === '/index-he') {
                         scrollToSection(item.href);
                       } else {
-                        router.push(`/${item.href}`);
+                        router.push(isHebrew ? `/index-he${item.href}` : `/${item.href}`);
                       }
                     }}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 ${
                       showBackground
-                        ? 'text-gray-700 hover:text-blue-600' 
+                        ? isBlogPage
+                          ? 'text-white hover:text-blue-300' 
+                          : 'text-gray-700 hover:text-blue-600'
                         : 'text-white hover:text-blue-300'
                     }`}
                   >
@@ -121,7 +146,9 @@ const Nav = () => {
                     href={item.href}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 ${
                       showBackground
-                        ? 'text-gray-700 hover:text-blue-600' 
+                        ? isBlogPage
+                          ? 'text-white hover:text-blue-300' 
+                          : 'text-gray-700 hover:text-blue-600'
                         : 'text-white hover:text-blue-300'
                     }`}
                   >
@@ -136,13 +163,15 @@ const Nav = () => {
                   onClick={() => setIsBlogDropdownOpen(!isBlogDropdownOpen)}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 flex items-center ${
                       showBackground
-                        ? 'text-gray-700 hover:text-blue-600' 
+                        ? isBlogPage
+                          ? 'text-white hover:text-blue-300' 
+                          : 'text-gray-700 hover:text-blue-600'
                         : 'text-white hover:text-blue-300'
                     }`}
                 >
-                  Blog
+                  {blogLabel}
                   <svg 
-                    className={`ml-1 h-4 w-4 transition-transform duration-300 ${isBlogDropdownOpen ? 'rotate-180' : ''}`}
+                    className={`${isHebrew ? 'mr-1' : 'ml-1'} h-4 w-4 transition-transform duration-300 ${isBlogDropdownOpen ? 'rotate-180' : ''}`}
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
@@ -152,7 +181,7 @@ const Nav = () => {
                 </button>
                 
                 {isBlogDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
+                  <div className={`absolute top-full ${isHebrew ? 'right-0' : 'left-0'} mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50`}>
                     {blogSubmenu.map((subItem) => (
                       <Link
                         key={subItem.href}
@@ -175,15 +204,15 @@ const Nav = () => {
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
-                if (router.pathname === '/') {
+                if (router.pathname === '/' || router.pathname === '/index-he') {
                   scrollToSection('#contact');
                 } else {
-                  router.push('/#contact');
+                  router.push(isHebrew ? '/index-he#contact' : '/#contact');
                 }
               }}
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              Get Started
+              {getStartedText}
             </a>
           </div>
 
@@ -193,7 +222,9 @@ const Nav = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`p-2 rounded-md transition-colors duration-300 ${
                 showBackground
-                  ? 'text-gray-700 hover:text-blue-600' 
+                  ? isBlogPage
+                    ? 'text-white hover:text-blue-300' 
+                    : 'text-gray-700 hover:text-blue-600'
                   : 'text-white hover:text-blue-300'
               }`}
             >
@@ -249,7 +280,7 @@ const Nav = () => {
                 onClick={() => setIsBlogDropdownOpen(!isBlogDropdownOpen)}
                 className="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
               >
-                Blog
+                {blogLabel}
                 <svg 
                   className={`h-4 w-4 transition-transform duration-300 ${isBlogDropdownOpen ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -260,7 +291,7 @@ const Nav = () => {
                 </svg>
               </button>
               {isBlogDropdownOpen && (
-                <div className="pl-4 mt-1 space-y-1">
+                <div className={`${isHebrew ? 'pr-4' : 'pl-4'} mt-1 space-y-1`}>
                   {blogSubmenu.map((subItem) => (
                     <Link
                       key={subItem.href}
@@ -292,7 +323,7 @@ const Nav = () => {
                 }}
                 className="block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center"
               >
-                Get Started
+                {getStartedText}
               </a>
             </div>
           </div>
