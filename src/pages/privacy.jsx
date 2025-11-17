@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import App from '../components/App';
 import styles from '../styles/privacy.module.scss';
+import Nav from '../components/Nav';
 
 const PrivacyPage = () => {
     const currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -11,6 +12,7 @@ const PrivacyPage = () => {
         {(
             <App title="AylonSpigel.com - Privacy Policy"
                 description="Privacy Policy for AylonSpigel.com - Learn how we collect, use, and protect your personal information." >
+                    <Nav />
                 <div className={styles.headbox} >
                     <h1 className={styles.bigheader}>Privacy Policy</h1>
                     <p className="text-sm text-gray-400 mb-6">Last Updated: {currentDate}</p>

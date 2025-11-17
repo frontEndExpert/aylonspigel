@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Link from 'next/link';
 
 const AIwhitePaper = () => {
 	return (
@@ -100,10 +101,11 @@ const AIwhitePaper = () => {
 			</section>
 
 			<div className='bg-blue-50 border border-blue-200 p-6 rounded-lg my-8 text-center text-gray-800'>
-				<h2 className='text-2xl font-bold mb-4 text-blue-600 border-none mt-0'>DOWNLOAD YOUR FREE AI MARKETING BLUEPRINT</h2>
+				<h2 className='text-2xl font-bold mb-4 text-blue-600 border-none mt-0'>GET YOUR FREE AI MARKETING BLUEPRINT</h2>
 				<p className='text-base leading-relaxed'>
 					To receive the complete, expanded guide on implementing these strategies, please provide your <strong className='font-bold'>real email address</strong> and fill out the form on our front page. You will receive your complimentary PDF: <strong className='font-bold'>The Definitive Guide to Slashing CAC and Accelerating Conversion with AI.</strong>
 				</p>
+				<Link href='/#contact' className='text-2xl font-bold mb-4 text-blue-600 border-none mt-0'>CLICK HERE</Link>
 			</div>
 
 			<footer className='mt-12 pt-6 border-t border-gray-300'>
