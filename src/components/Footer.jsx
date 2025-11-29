@@ -1,7 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Footer = ({ data }) => {
+	const router = useRouter();
+	const isHebrew = router.pathname?.includes('-he') || router.pathname === '/index-he';
+	const privacyLink = isHebrew ? '/privacy-he' : '/privacy';
 	if (data) {
 		var networks = data.social.map(function (network) {
 			// Map social network names to brand colors
@@ -67,7 +71,7 @@ const Footer = ({ data }) => {
 									</a>
 								</p>
 								<p>
-								<Link href='/privacy' legacyBehavior>
+								<Link href={privacyLink} legacyBehavior>
 									<a 
 										className="privacy-link font-bold hover:text-blue-300 transition-colors duration-300 block"
 										style={{ 

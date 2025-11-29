@@ -7,11 +7,17 @@
   background-color: black;
   text-align: left;
 }
+.headbox[dir="rtl"] {
+  text-align: right;
+}
 .headbox .bigheader {
   font-size: 24px;
   font-weight: bold;
   text-align: left;
   color: white;
+}
+.headbox[dir="rtl"] .bigheader {
+  text-align: right;
 }
 .headbox > h2 {
   text-align: left;
@@ -19,9 +25,19 @@
   font-weight: bold;
   color: white;
 }
+.headbox[dir="rtl"] > h2 {
+  text-align: right;
+}
 .headbox > p {
   text-align: left;
   font-size: 14px;
   font-weight: normal;
   color: white;
+}
+.headbox[dir="rtl"] > p {
+  text-align: right;
+}
+.headbox[dir="rtl"] ul {
+  text-align: right;
+  direction: rtl;
 }
