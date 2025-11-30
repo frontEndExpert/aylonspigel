@@ -37,7 +37,7 @@ const Nav = () => {
   }, [router.pathname]);
 
   // Detect if we're on a Hebrew page
-  const isHebrew = router.pathname.includes('-he') || router.pathname === '/index-he';
+  const isHebrew = !(router.pathname.includes('-en') || router.pathname === '/index-en');
   
   const navItems = isHebrew ? [
     { href: '#home', label: 'בית', isHash: true },
@@ -73,7 +73,7 @@ const Nav = () => {
   };
 
   // Always show background on non-home pages
-  const showBackground = isScrolled || (router.pathname !== '/' && router.pathname !== '/index-he');
+  const showBackground = isScrolled || (router.pathname !== '/' && router.pathname !== '/index-en');
   // Check if we're on a blog page
   const isBlogPage = router.pathname?.includes('/blog/');
 
@@ -93,7 +93,7 @@ const Nav = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            {(router.pathname === '/' || router.pathname === '/index-he') ? (
+            {(router.pathname === '/' || router.pathname === '/index-en') ? (
               <a 
                 href="#home" 
                 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent cursor-pointer"
@@ -106,7 +106,7 @@ const Nav = () => {
               </a>
             ) : (
               <Link 
-                href={isHebrew ? "/index-he" : "/"}
+                href={isHebrew ? "/" : "/index-en"}
                 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent cursor-pointer"
               >
                 AS
@@ -124,10 +124,10 @@ const Nav = () => {
                     href={item.href}
                     onClick={(e) => {
                       e.preventDefault();
-                      if (router.pathname === '/' || router.pathname === '/index-he') {
+                      if (router.pathname === '/' || router.pathname === '/index-en') {
                         scrollToSection(item.href);
                       } else {
-                        router.push(isHebrew ? `/index-he${item.href}` : `/${item.href}`);
+                        router.push(isHebrew ? `/${item.href}` : `/index-en${item.href}`);
                       }
                     }}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 ${
@@ -204,10 +204,10 @@ const Nav = () => {
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
-                if (router.pathname === '/' || router.pathname === '/index-he') {
+                if (router.pathname === '/' || router.pathname === '/index-en') {
                   scrollToSection('#contact');
                 } else {
-                  router.push(isHebrew ? '/index-he#contact' : '/#contact');
+                  router.push(isHebrew ? '/#contact' : '/index-en#contact');
                 }
               }}
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
