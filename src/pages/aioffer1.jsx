@@ -43,10 +43,10 @@ export default function LandingPageEN() {
 
       <div
         dir="ltr"
-        className={`${styles.pageWrapper} min-h-screen text-white bg-[#0d0d0d] font-sans`}
+        className={ `${styles.pageWrapper} min-h-screen text-white bg-[#0d0d0d] font-sans` }
       >
 
-        {/* ─── NAV ─── */}
+        {/* ─── NAV ─── */ }
         <nav
           className="fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-6 py-4 bg-[#0d0d0d]/85 backdrop-blur-xl border-b border-purple-600/20"
         >
@@ -55,28 +55,28 @@ export default function LandingPageEN() {
             <span
               className="text-2xl font-black bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent"
             >
-              {' '}AI
+              { ' ' }AI
             </span>
           </div>
 
           <a
-            href={WA_LINK}
+            href={ WA_LINK }
             target="_blank"
             rel="noopener noreferrer"
-            className={`${styles.btnWa} hidden sm:inline-flex items-center gap-2 font-bold text-sm text-white rounded-full px-5 py-2.5 transition-transform hover:scale-105 bg-[#25D366]`}
+            className={ `${styles.btnWa} hidden sm:inline-flex items-center gap-2 font-bold text-sm text-white rounded-full px-5 py-2.5 transition-transform hover:scale-105 bg-[#25D366]` }
           >
             <span>📲</span>
             <span>WhatsApp</span>
           </a>
         </nav>
 
-        {/* ─── HERO ─── */}
-        <section className={`relative overflow-hidden pt-36 pb-28 px-6 text-center ${styles.heroGradient}`}>
+        {/* ─── HERO ─── */ }
+        <section className={ `relative overflow-hidden pt-36 pb-28 px-6 text-center ${styles.heroGradient}` }>
           <div
-            className={`${styles.heroBlob} absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full pointer-events-none bg-purple-600/35 blur-[60px]`}
-            style={{
+            className={ `${styles.heroBlob} absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full pointer-events-none bg-purple-600/35 blur-[60px]` }
+            style={ {
               background: 'radial-gradient(circle, rgba(124,58,237,0.35) 0%, transparent 70%)',
-            }}
+            } }
           />
 
           <div className="relative z-10 max-w-3xl mx-auto">
@@ -87,9 +87,9 @@ export default function LandingPageEN() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 text-white text-center">
-              Get{' '}
-              <span className={styles.gradientText}>10–30 Ready Leads</span>
-              {' '}in 14 Days —{' '}
+              Get{ ' ' }
+              <span className={ styles.gradientText }>10–30 Ready Leads</span>
+              { ' ' }in 14 Days —{ ' ' }
               <br className="hidden sm:block" />
               <span className="text-yellow-400">Or You Don't Pay</span>
             </h1>
@@ -97,15 +97,15 @@ export default function LandingPageEN() {
             <p
               className="text-lg sm:text-xl leading-relaxed mb-10 mx-auto max-w-2xl text-gray-300 text-center"
             >
-              We build your entire lead generation system: landing page, ads, and WhatsApp automation.{' '}
+              We build your entire lead generation system: landing page, ads, and WhatsApp automation.{ ' ' }
               <strong className="text-white">You just answer the phone.</strong>
             </p>
 
             <a
-              href={WA_LINK}
+              href={ WA_LINK }
               target="_blank"
               rel="noopener noreferrer"
-              className={`${styles.btnWa} ${styles.float} inline-flex items-center justify-center gap-3 rounded-full font-black text-xl text-white px-10 py-5 transition-transform hover:scale-105 bg-[#25D366] shadow-[0_8px_30_rgba(37,211,102,0.45)]`}
+              className={ `${styles.btnWa} ${styles.float} inline-flex items-center justify-center gap-3 rounded-full font-black text-xl text-white px-10 py-5 transition-transform hover:scale-105 bg-[#25D366] shadow-[0_8px_30_rgba(37,211,102,0.45)]` }
             >
               📲 Chat with us on WhatsApp
             </a>
@@ -116,7 +116,7 @@ export default function LandingPageEN() {
           </div>
         </section>
 
-        {/* ─── WHAT YOU GET ─── */}
+        {/* ─── WHAT YOU GET ─── */ }
         <section className="py-24 px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
@@ -124,30 +124,30 @@ export default function LandingPageEN() {
                 What's Included
               </p>
               <h2 className="text-3xl sm:text-4xl font-black text-white">
-                Everything Done For You —{' '}
-                <span className={styles.gradientText}>End-to-End Solution</span>
+                Everything Done For You —{ ' ' }
+                <span className={ styles.gradientText }>End-to-End Solution</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {bullets.map((b, i) => (
+              { bullets.map((b, i) => (
                 <div
-                  key={i}
-                  className={`${styles.cardHover} rounded-2xl p-6 text-left bg-[#111827] border border-purple-600/25`}
+                  key={ i }
+                  className={ `${styles.cardHover} rounded-2xl p-6 text-left bg-[#111827] border border-purple-600/25` }
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4 bg-purple-600/15 border border-purple-400/30 shadow-[0_0_16px_rgba(124,58,237,0.2)]"
                   >
-                    {b.icon}
+                    { b.icon }
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{b.title}</h3>
-                  <p className="text-sm leading-relaxed text-gray-400">{b.desc}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{ b.title }</h3>
+                  <p className="text-sm leading-relaxed text-gray-400">{ b.desc }</p>
                 </div>
-              ))}
+              )) }
 
-              {/* 6th guarantee card */}
+              {/* 6th guarantee card */ }
               <div
-                className={`${styles.cardHover} rounded-2xl p-6 text-left sm:col-span-2 lg:col-span-1 bg-gradient-to-br from-purple-600/20 to-purple-600/10 border border-purple-400/40`}
+                className={ `${styles.cardHover} rounded-2xl p-6 text-left sm:col-span-2 lg:col-span-1 bg-gradient-to-br from-purple-600/20 to-purple-600/10 border border-purple-400/40` }
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4 bg-purple-600/25 border border-purple-400/50"
@@ -163,8 +163,8 @@ export default function LandingPageEN() {
           </div>
         </section>
 
-        {/* ─── TESTIMONIAL ─── */}
-        <section className="py-20 px-6">
+        {/* ─── TESTIMONIAL ─── */ }
+        {/*<section className="py-20 px-6">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-xs font-bold uppercase tracking-widest mb-8 text-purple-400">
               Hear from our clients
@@ -207,9 +207,9 @@ export default function LandingPageEN() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        {/* ─── PRICING ─── */}
+        {/* ─── PRICING ─── */ }
         <section className="py-24 px-6">
           <div className="max-w-lg mx-auto text-center">
             <p className="text-xs font-bold uppercase tracking-widest mb-4 text-purple-400">
@@ -224,14 +224,14 @@ export default function LandingPageEN() {
             >
               <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 pointer-events-none blur-[30px]"
-                style={{
+                style={ {
                   background: 'radial-gradient(circle, rgba(124,58,237,0.35) 0%, transparent 70%)',
-                }}
+                } }
               />
 
               <div className="relative z-10">
                 <div
-                  className={`${styles.scarcityPulse} inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-bold mb-6 bg-red-500/15 border border-red-500/40 text-red-400`}
+                  className={ `${styles.scarcityPulse} inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-bold mb-6 bg-red-500/15 border border-red-500/40 text-red-400` }
                 >
                   🔴 Only <strong>2 spots left!</strong>
                 </div>
@@ -254,13 +254,13 @@ export default function LandingPageEN() {
                 <div className="w-full h-px mb-8 bg-purple-600/25" />
 
                 <ul className="text-left space-y-3 mb-8">
-                  {[
+                  { [
                     'Landing Page + Ad Campaign + Automation',
                     '14-Day Guarantee — Results or no pay',
                     'All-inclusive, no hidden costs',
                   ].map((item, i) => (
                     <li
-                      key={i}
+                      key={ i }
                       className="flex items-center justify-start gap-3 text-sm text-gray-300"
                     >
                       <span
@@ -268,16 +268,16 @@ export default function LandingPageEN() {
                       >
                         ✓
                       </span>
-                      <span>{item}</span>
+                      <span>{ item }</span>
                     </li>
-                  ))}
+                  )) }
                 </ul>
 
                 <a
-                  href={WA_LINK}
+                  href={ WA_LINK }
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${styles.btnWa} w-full flex items-center justify-center gap-3 rounded-full font-black text-lg text-white py-5 transition-transform hover:scale-105 bg-[#25D366] shadow-[0_8px_30_rgba(37,211,102,0.4)]`}
+                  className={ `${styles.btnWa} w-full flex items-center justify-center gap-3 rounded-full font-black text-lg text-white py-5 transition-transform hover:scale-105 bg-[#25D366] shadow-[0_8px_30_rgba(37,211,102,0.4)]` }
                 >
                   📲 Message us on WhatsApp
                 </a>
@@ -290,11 +290,11 @@ export default function LandingPageEN() {
           </div>
         </section>
 
-        {/* ─── FOOTER ─── */}
+        {/* ─── FOOTER ─── */ }
         <footer
           className="py-8 text-center text-sm border-t border-purple-600/20 text-gray-600"
         >
-          Copyright © 2025{' '}
+          Copyright © 2025{ ' ' }
           <span className="font-bold text-purple-600">First Choice AI</span>. All rights reserved.
         </footer>
 
