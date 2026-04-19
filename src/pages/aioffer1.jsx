@@ -94,10 +94,17 @@ export default function LandingPageEN() {
               <span className="text-yellow-400">Or You Don't Pay</span>
             </h1>
 
+            <p className="text-lg sm:text-xl leading-relaxed mb-10 mx-auto max-w-2xl text-gray-300 text-right 
+            sm:text-center">"Hi, I am Aylon Spigel and I help businesses to combine <strong className="text-white">paid ads</strong> with <strong className="text-white">AI Agents</strong> to generate <strong className="text-white">more qualified leads</strong> and close more sales.
+              <br />
+              The businesses that adopt artificial intelligence today — will beat their competitors tomorrow. Those that don't — <strong className="text-white">will be left behind</strong>.
+            </p>
+
             <p
               className="text-lg sm:text-xl leading-relaxed mb-10 mx-auto max-w-2xl text-gray-300 text-center"
             >
-              We build your entire lead generation system: landing page, ads, and WhatsApp automation.{ ' ' }
+              We build your entire lead generation system: landing page, ads, and AI Agents. <strong className="text-white">Powered by the latest AI</strong> — so your leads are smarter, faster, and cheaper than running ads alone.{ ' ' }
+              <br /> We do the work: -{ ' ' }
               <strong className="text-white">You just answer the phone.</strong>
             </p>
 

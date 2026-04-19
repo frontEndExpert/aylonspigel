@@ -302,7 +302,8 @@ export default function LandingPage() {
           className="py-8 text-center text-sm border-t border-purple-600/20 text-gray-600"
         >
           כל הזכויות שמורות © 2025{ ' ' }
-          <span className="font-bold text-purple-600">First Choice AI</span>
+          <span className="font-bold text-purple-600">First Choice AI</span> -
+          <a href="https://aylonspigel.com/privacy-he/">מדיניות פרטיות</a>
         </footer>
 
       </div>
