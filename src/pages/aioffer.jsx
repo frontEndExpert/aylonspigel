@@ -100,8 +100,13 @@ export default function LandingPage() {
             <p
               className="text-lg sm:text-xl leading-relaxed mb-10 mx-auto max-w-2xl text-gray-300 text-right sm:text-center"
             >
-              אנחנו בונים לך מערכת לידים שלמה: דף נחיתה, פרסומות, ואוטומציה
-              בוואטסאפ.{ ' ' }
+              אנחנו בונים בשבילך את כל מערכת יצירת הלידים: דף נחיתה, קמפיינים ממומנים וסוכני AI.
+
+              הכול מונע על‑ידי ה‑AI המתקדם ביותר – כך שהלידים שלך חכמים יותר, מהירים יותר וזולים יותר מאשר הרצת פרסום ממומן בלבד.
+
+              אנחנו עושים את כל העבודה הקשה
+
+              { ' ' }
               <strong className="text-white">אתה רק עונה לטלפון.</strong>
             </p>
 
@@ -302,8 +307,8 @@ export default function LandingPage() {
           className="py-8 text-center text-sm border-t border-purple-600/20 text-gray-600"
         >
           כל הזכויות שמורות © 2025{ ' ' }
-          <span className="font-bold text-purple-600">First Choice AI</span> -
-          <a href="https://aylonspigel.com/privacy-he/">מדיניות פרטיות</a>
+          <span className="font-bold text-purple-600">First Choice AI</span>{ ' | ' }
+          <a href="https://aylonspigel.com/privacy-he/" target="_blank" rel="noopener noreferrer">מדיניות פרטיות</a>
         </footer>
 
       </div>

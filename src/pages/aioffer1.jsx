@@ -300,7 +300,7 @@ export default function LandingPageEN() {
         {/* ─── FOOTER ─── */ }
         <footer
           className="py-8 text-center text-sm border-t border-purple-600/20 text-gray-600"
-        >
+        ><a href="https://aylonspigel.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>{ ' | ' }
           Copyright © 2025{ ' ' }
           <span className="font-bold text-purple-600">First Choice AI</span>. All rights reserved.
         </footer>
