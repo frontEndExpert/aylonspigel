@@ -38,8 +38,8 @@ export default function LandingPage() {
   return (
     <>
       <Head>
-        <title>קבל 10–30 לידים תוך 14 יום | First Choice AI</title>
-        <meta name="description" content="מערכת לידים שלמה: דף נחיתה, פרסומות ואוטומציה בוואטסאפ. ערבות תוצאות." />
+        <title>קבל 10–30 לידים תוך 14 יום | First Choice AI | AI Automation & AI Agent Implementation for Small Businesses | Aylon Spigel</title>
+        <meta name="description" content="מערכת לידים שלמה: דף נחיתה, פרסומות ואוטומציה בוואטסאפ. ערבות תוצאות.קבל 10–30 לידים תוך 14 יום | First Choice AI | AI Automation & AI Agent Implementation for Small Businesses | Aylon Spigel" />
       </Head>
 
       <div

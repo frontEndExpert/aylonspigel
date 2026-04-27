@@ -15,15 +15,15 @@ const Nav = dynamic(() => import('@/components/Nav'), { ssr: true });
 
 export default function HomeHe() {
 	return (
-		<App title="אוטומציית AI לניהול לידים | חסכו 10+ שעות בשבוע | אילון שפיגל" description="מעוניינים לחסוך 10+ שעות בשבוע? אני בונה מערכות אוטומציה עם בינה מלאכותית שממיינת ומדרגת לידים אוטומטית. התאימו את מערכת ניהול הלידים לעסק שלכם - קבלו בדיקת אוטומציה חינם!">
+		<App title="אוטומציית AI לניהול לידים | חסכו 10+ שעות בשבוע | אילון שפיגל | AI Automation & AI Agent Implementation for Small Businesses" description="מעוניינים לחסוך 10+ שעות בשבוע? אני בונה מערכות אוטומציה עם בינה מלאכותית שממיינת ומדרגת לידים אוטומטית. התאימו את מערכת ניהול הלידים לעסק שלכם - קבלו בדיקת אוטומציה חינם!">
 			<div className="App">
 				<Nav />
-				<Header data={resumeDataHe.main} />
-				<Business data={resumeDataHe.business} />
-				<Portfolio data={resumeDataHe.portfolio} />
-				<Testimonials data={resumeDataHe.testimonials} />
-				<Contact data={resumeDataHe} />
-				<Footer data={resumeDataHe.main} />
+				<Header data={ resumeDataHe.main } />
+				<Business data={ resumeDataHe.business } />
+				<Portfolio data={ resumeDataHe.portfolio } />
+				<Testimonials data={ resumeDataHe.testimonials } />
+				<Contact data={ resumeDataHe } />
+				<Footer data={ resumeDataHe.main } />
 			</div>
 		</App>
 	);

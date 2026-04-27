@@ -37,8 +37,8 @@ export default function LandingPageEN() {
   return (
     <>
       <Head>
-        <title>Get 10–30 Ready Leads in 14 Days | First Choice AI</title>
-        <meta name="description" content="Complete lead system: landing page, ads, and WhatsApp automation. Guaranteed results." />
+        <title>Get 10–30 Ready Leads in 14 Days | First Choice AI | AI Automation & AI Agent Implementation for Small Businesses | Aylon Spigel</title>
+        <meta name="description" content="Complete lead system: landing page, ads, and WhatsApp automation. Guaranteed results.Get 10–30 Ready Leads in 14 Days | First Choice AI | AI Automation & AI Agent Implementation for Small Businesses | Aylon Spigel" />
       </Head>
 
       <div
