@@ -41,14 +41,14 @@ const Nav = () => {
   
   const navItems = isHebrew ? [
     { href: '#home', label: 'בית', isHash: true },
-    { href: '#about', label: 'אודות', isHash: true },
-    { href: '#portfolio', label: 'תיק עבודות', isHash: true },
+    { href: '#services', label: 'אודות', isHash: true },
+    { href: '#proof', label: 'תיק עבודות', isHash: true },
     { href: '#testimonials', label: 'המלצות', isHash: true },
     { href: '#contact', label: 'צור קשר', isHash: true }
   ] : [
     { href: '#home', label: 'Home', isHash: true },
-    { href: '#about', label: 'About', isHash: true },
-    { href: '#portfolio', label: 'Portfolio', isHash: true },
+    { href: '#services', label: 'About', isHash: true },
+    { href: '#proof', label: 'Portfolio', isHash: true },
     { href: '#testimonials', label: 'Testimonials', isHash: true },
     { href: '#contact', label: 'Contact', isHash: true }
   ];
