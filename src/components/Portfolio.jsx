@@ -1,5 +1,6 @@
 import React from "react";
 import Image from 'next/image';
+import LeadIQDemo from "./LeadIQDemo";
 
 const Portfolio = ({ data }) => {
   const caseStudies = data?.caseStudies || [];
@@ -143,6 +144,8 @@ const Portfolio = ({ data }) => {
             </div>
           </div>
         </div>
+
+        <LeadIQDemo />
 
         {/* Final CTA Section */}
         <div className="text-center mt-12 sm:mt-16 lg:mt-20">
