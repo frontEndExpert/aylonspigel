@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic'
 
-const Nav = dynamic(() => import('./Nav'), { ssr: true });
 const Header = dynamic(() => import('./Header'), { ssr: true });
 const Business = dynamic(() => import('./business'), { ssr: true });
-const Footer = dynamic(() => import('./Footer'), {	ssr: true  });
+const Offers = dynamic(() => import('./Offers'), { ssr: true });
+const Footer = dynamic(() => import('./Footer'), { ssr: true });
 const Testimonials = dynamic(() => import('./Testimonials'), {	ssr: true  });
 const Portfolio = dynamic(() => import('./Portfolio'), {	ssr: true  });
 const Contact = dynamic(() => import('./Contact'), {	ssr: true  });
@@ -25,12 +25,12 @@ const HomePage = () => {
 
 	return (
 		<div className='home-page'>
-			<Nav />
 			<Header data={resumeData.main} />
-			<Business data={resumeData.business} />
+			<Business data={resumeData.main} />
+			<Offers />
 			<Portfolio data={resumeData.portfolio} />
 			<Testimonials data={resumeData.testimonials} />
-			<Contact data={resumeData} />
+			<Contact data={resumeData.main} />
 			<Footer data={resumeData.main} />
 		</div>
 	);
