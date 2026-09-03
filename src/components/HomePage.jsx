@@ -8,9 +8,6 @@ const Footer = dynamic(() => import('./Footer'), { ssr: true });
 const Testimonials = dynamic(() => import('./Testimonials'), {	ssr: true  });
 const Portfolio = dynamic(() => import('./Portfolio'), {	ssr: true  });
 const Contact = dynamic(() => import('./Contact'), {	ssr: true  });
-const Resume = dynamic(() => import('./Resume'), {	ssr: true  });
-const Skills = dynamic(() => import('./Skills'), {	ssr: true  });
-
 
 const HomePage = () => {
 	const [resumeData, setResumeData] = useState({});
