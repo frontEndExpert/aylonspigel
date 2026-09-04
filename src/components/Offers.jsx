@@ -13,7 +13,7 @@ const Offers = () => {
         <div className="package bg-[#0d1b34] rounded-2xl p-8 mb-6 flex flex-wrap items-center justify-between gap-6">
           <div className="max-w-md">
             <h3 className="text-white text-[22px] font-bold mb-2">
-              אוטומציה לסינון לידים ב-AI
+              אוטומציה עם בינה לסינון לידים ב-AI
             </h3>
             <p className="text-[#c9d3de] text-[15px] leading-relaxed mb-3">
               אני בונה מערכות AI שחוקרות ומדרגות כל ליד ברגע שהוא נכנס - כך
