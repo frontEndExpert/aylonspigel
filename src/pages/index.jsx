@@ -21,7 +21,7 @@ export default function HomeHe() {
 				<Nav />
 				<Header data={ resumeDataHe.main } />
 				<Business data={ resumeDataHe.business } />
-				<Offers />
+				<Offers videoSection={ resumeDataHe.portfolio.videoSection } />
 				<Portfolio data={ resumeDataHe.portfolio } />
 				<Testimonials data={ resumeDataHe.testimonials } />
 				<Contact data={ resumeDataHe } />

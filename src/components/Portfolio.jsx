@@ -1,12 +1,11 @@
 import React from "react";
 import Image from 'next/image';
-import LeadIQDemo from "./LeadIQDemo";
 
 const Portfolio = ({ data }) => {
   const caseStudies = data?.caseStudies || [];
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 bg-brand-neutral w-full" id="proof">
+    <section className="pt-8 sm:pt-12 lg:pt-16 pb-4 sm:pb-6 lg:pb-8 bg-brand-neutral w-full" id="proof">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
@@ -120,29 +119,6 @@ const Portfolio = ({ data }) => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Demo Video Placeholder */}
-        <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
-          <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-lg border border-gray-100 w-full">
-            <div className="w-full max-w-6xl mx-auto">
-              <h3 className="text-2xl sm:text-3xl font-bold text-brand-primary-dark mb-4">
-                {data?.videoSection?.title || "Automation Process In Action"}
-              </h3>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                {data?.videoSection?.description || "Watch how this automation captures lead information from your forms..."}
-              </p>
-              
-              {/* Video embed */}
-              {data?.videoSection?.videoUrl && (
-                <div className="bg-gray-100 rounded-xl p-8 border-2 border-dashed border-gray-300">
-                  <p className="text-sm text-gray-500">
-                    <iframe src={data?.videoSection?.videoUrl} width="100%" height="400"></iframe>
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
         </div>
 
         {/* Final CTA Section */}
