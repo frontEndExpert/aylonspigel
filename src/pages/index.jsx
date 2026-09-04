@@ -2,14 +2,15 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import App from '@/components/App';
 import Header from '@/components/Header';
-import About from '@/components/About';
-import Resume from '@/components/Resume';
+import Offers from '@/components/Offers';
 import Portfolio from '@/components/Portfolio';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Business from '@/components/business';
 import resumeDataHe from '../../public/static/resumeDataHe.json';
+import About from '@/components/About';
+import Resume from '@/components/Resume';
 
 const Nav = dynamic(() => import('@/components/Nav'), { ssr: true });
 
@@ -20,6 +21,7 @@ export default function HomeHe() {
 				<Nav />
 				<Header data={ resumeDataHe.main } />
 				<Business data={ resumeDataHe.business } />
+				<Offers />
 				<Portfolio data={ resumeDataHe.portfolio } />
 				<Testimonials data={ resumeDataHe.testimonials } />
 				<Contact data={ resumeDataHe } />

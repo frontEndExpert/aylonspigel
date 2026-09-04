@@ -145,8 +145,6 @@ const Portfolio = ({ data }) => {
           </div>
         </div>
 
-        <LeadIQDemo />
-
         {/* Final CTA Section */}
         <div className="text-center mt-12 sm:mt-16 lg:mt-20">
           <p className="text-xl text-gray-700 mb-6 sm:mb-8">
